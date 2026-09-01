@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="從四個設計案例，思考永續發展如何創造文化、社會與環境價值。">
+  <title>如何在設計中思考永續發展？— Eden Design Lab</title>
+  <link href="../css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../css/style.min.css?v=20260714-16" rel="stylesheet">
+  <style>
+    :root { --ink: #11161d; --muted: #65706b; --paper: #f1f3f2; --white: #fff; --green: #6d9985; --green-deep: #355d4d; --line: #d8dedb; --yellow: #f9d442; }
+    html { scroll-behavior: smooth; }
+    body.eden-article { margin: 0; color: var(--ink); background: var(--paper); font-family: "Clash Grotesk", "Noto Sans TC", "PingFang TC", sans-serif; }
+    .eden-article *, .eden-article *::before, .eden-article *::after { box-sizing: border-box; }
+    .article-hero { min-height: 78vh; display: grid; align-items: end; padding: 190px 20px 90px; color: #fff; background: #454c57; }
+    .article-hero__inner, .article-shell { width: min(1160px, 100%); margin: 0 auto; }
+    .article-hero__meta { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0 0 34px; color: #aeb8b3; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+    .article-hero__meta span + span::before { content: "•"; margin-right: 22px; color: var(--green); }
+    .article-hero h1 { max-width: 1000px; margin: 0; font-size: clamp(44px, 7.2vw, 98px); line-height: 1.04; letter-spacing: -.052em; }
+    .article-hero__lead { max-width: 760px; margin: 36px 0 0; color: #d6dcda; font-size: clamp(18px, 2vw, 24px); line-height: 1.75; }
+    .article-cover { display: block; width: 100%; height: min(56vw, 660px); object-fit: cover; }
+    .article-main { padding: 100px 20px 120px; }
+    .article-layout { display: grid; grid-template-columns: 180px minmax(0, 760px); justify-content: center; gap: 72px; }
+    .article-toc { position: sticky; top: 130px; align-self: start; }
+    .article-toc p { margin: 0 0 18px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .article-toc a { display: block; padding: 10px 0; color: #6e7873; font-size: 14px; line-height: 1.4; text-decoration: none; border-bottom: 1px solid var(--line); transition: color .2s ease; }
+    .article-toc a:hover { color: var(--green-deep); }
+    .article-body { min-width: 0; }
+    .article-body p { margin: 0 0 28px; font-size: 18px; line-height: 1.95; }
+    .article-body h2 { scroll-margin-top: 130px; margin: 98px 0 28px; font-size: clamp(31px, 4vw, 48px); line-height: 1.18; letter-spacing: -.03em; }
+    .article-body h2:first-of-type { margin-top: 68px; }
+    .article-intro { padding: 38px; background: var(--white); border-radius: 28px; }
+    .article-intro p:last-child { margin-bottom: 0; }
+    .article-figure { margin: 44px 0 26px; }
+    .article-figure img { display: block; width: 100%; max-height: 640px; object-fit: cover; border-radius: 24px; background: #e1e5e3; }
+    .article-figure figcaption { margin-top: 13px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .article-figure a, .article-sources a, .article-original a { color: var(--green-deep); text-underline-offset: 3px; }
+    .case-number { display: inline-grid; place-items: center; width: 38px; height: 38px; margin-bottom: 20px; color: #fff; background: var(--green-deep); border-radius: 50%; font-size: 13px; }
+    .article-quote { margin: 64px 0; padding: 36px 38px; background: var(--blog-green-soft); border-radius: 28px; }
+    .article-quote p { margin: 0; font-size: clamp(22px, 3vw, 31px); font-weight: 600; line-height: 1.55; letter-spacing: -.02em; }
+    .article-sources { margin-top: 86px; padding-top: 36px; border-top: 1px solid var(--line); }
+    .article-sources h2 { margin: 0 0 24px; font-size: 26px; }
+    .article-sources ul { margin: 0; padding-left: 20px; }
+    .article-sources li { margin: 12px 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+    .article-original { margin-top: 56px; padding: 28px 30px; background: #dfe8e3; border-radius: 22px; }
+    .article-original p { margin: 0; font-size: 15px; line-height: 1.8; }
+    .article-footer { padding: 70px 20px; color: #fff; background: #454c57; }
+    .article-footer__inner { width: min(1160px, 100%); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .article-footer p { margin: 0; color: #b8c0bd; }
+    .article-footer a { color: #fff; text-decoration: none; border-bottom: 1px solid var(--green); }
+    .back-to-top { position: fixed; right: 28px; bottom: 28px; z-index: 20; display: grid; place-items: center; width: 52px; height: 52px; color: #fff; background: var(--green); border-radius: 50%; text-decoration: none; box-shadow: 0 12px 30px rgba(15, 25, 21, .18); }
+    @media (max-width: 900px) {
+      .article-hero { min-height: auto; padding-top: 160px; }
+      .article-layout { grid-template-columns: 1fr; }
+      .article-toc { display: none; }
+    }
+    @media (max-width: 620px) {
+      .article-hero { padding: 135px 18px 62px; }
+      .article-hero__meta { gap: 8px 12px; }
+      .article-hero__meta span + span::before { margin-right: 12px; }
+      .article-main { padding: 64px 18px 88px; }
+      .article-intro, .article-quote { padding: 26px 24px; border-radius: 22px; }
+      .article-body p { font-size: 17px; line-height: 1.88; }
+      .article-body h2 { margin-top: 74px; }
+      .article-figure img { border-radius: 18px; }
+      .article-footer__inner { align-items: flex-start; flex-direction: column; }
+      .back-to-top { right: 18px; bottom: 18px; width: 46px; height: 46px; }
+    }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="../css/blog-article.css?v=20260714-4" rel="stylesheet">
+</head>
+<body class="eden-home eden-article eden-blog-single" id="top">
+  <div class="blog-reading-progress" id="blogReadingProgress" aria-hidden="true"></div>
+  <header class="header eden-site-header">
+    <div class="container">
+      <div class="eden-site-header__inner">
+        <a aria-label="回到首頁" class="eden-site-header__brand" href="../index.html#about">Eden.</a>
+        <button aria-controls="edenPrimaryNav" aria-expanded="false" aria-label="開啟導覽選單" class="eden-site-header__toggle" onclick="toggleArticleMenu(this)" type="button"><span></span><span></span><span></span></button>
+        <nav aria-label="文章導覽" class="eden-site-nav" id="edenPrimaryNav">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#portfolio">Portfolio</a>
+          <a href="../index.html#case-studies">Case Studies</a>
+          <a class="is-active" href="../index.html#blog">Blog</a>
+          <a class="eden-site-nav__cta" href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="eden-blog-main">
+    <section class="article-hero">
+      <div class="article-hero__inner">
+        <div class="eden-blog-cover">
+          <img class="article-cover" src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/03/SDG-20240305.jpg?fit=1163%2C625&amp;ssl=1" alt="永續設計與 SDGs 主題視覺">
+        </div>
+        <div class="eden-blog-heading">
+          <p class="article-hero__meta"><span>Sustainable Design</span><span>原刊 2024.03.08</span><span>閱讀時間 4 分鐘</span></p>
+          <h1>如何在設計中思考永續發展？</h1>
+          <p class="article-hero__lead">從銀行空間、開源科技、服裝消費與玻璃回收四個案例，思考設計如何創造文化、社會與環境價值。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-main">
+      <div class="article-shell article-layout">
+        <article class="article-body">
+          <div class="article-intro">
+            <p>我們日常生活所使用的物品，都是經由人為設計出來的。「設計」可以為人帶來更好的生活，也可以解決社會問題。永續發展不僅關乎環保，更涉及社會包容、環境永續與跨世代公平，目標是實現長期而穩定的發展。</p>
+            <p>2015 年 9 月，聯合國永續發展高峰會通過以 17 項永續發展目標（SDGs）為核心的 2030 永續發展議程。以「沒有人是局外人」為概念，各國開始對齊永續目標；設計與創新商業模式，也成為我們想像未來的重要方法。</p>
+          </div>
+
+          <h2 id="context">永續，不只是一個環保議題</h2>
+          <p>當永續成為企業與社會共同面對的課題，設計所處理的便不只是外觀，而是服務、行為、空間與資源如何形成新的關係。以下四個案例，分別從實體空間、科技限制、消費文化與循環材料切入。</p>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/03/image01.jpeg?resize=1536%2C779&amp;ssl=1" alt="聯合國永續發展目標 SDGs 17 個目標">
+            <figcaption>聯合國永續發展目標 SDGs 17 個目標／圖片來源：<a href="https://sdgs.un.org/goals" target="_blank" rel="noreferrer">United Nations</a></figcaption>
+          </figure>
+
+          <h2 id="fubon"><span class="case-number">01</span><br>北富銀永續美化銀行案例</h2>
+          <p>永續發展顧問公司 Plan b 改造台北富邦銀行北台南分行。面對純網銀時代，傳統實體分行的角色受到挑戰，因此專案以「重新定義實體分行價值」作為空間改造的切入點。</p>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/03/blog-pic-20240305-2.png?fit=784%2C422&amp;ssl=1" alt="台北富邦銀行北台南分行空間">
+            <figcaption>台北富邦銀行北台南分行／圖片來源：<a href="https://theplanb.cc/archives/project/%E5%8C%97%E5%AF%8C%E9%8A%80%E5%93%81%E7%89%8C%E9%A1%A7%E5%95%8F%E6%A1%88_%E5%8C%97%E5%8F%B0%E5%8D%97%E5%88%86%E8%A1%8C" target="_blank" rel="noreferrer">Plan b</a></figcaption>
+          </figure>
+          <p>團隊以「20% 空間改造學」重新設計分行內 20% 的空間，轉化成具有書店、咖啡館氣氛的休閒場域，並規劃共學等實驗企劃，重新連結人、地方、空間與銀行體系。</p>
+          <p>傳統意見箱也被轉化為「提案牆」，訪客能用提案卡與心情貼紙留下對服務的想法；「時間提案」則從等候叫號的日常出發，依照 5、15 或 30 分鐘的等待時間，提供休息、茶飲、觀展與探索台南故事等不同體驗。</p>
+
+          <h2 id="akqa"><span class="case-number">02</span><br>AKQA — Code of Conscience</h2>
+          <p>世界上約三分之一的自然保護區仍受到人類活動威脅。AKQA 與全球非政府組織合作推出 Code of Conscience 開源軟體，讓重型機具能辨識受保護區域，並限制其在保護區內運作。</p>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/03/03.png?resize=600%2C339&amp;ssl=1" alt="Code of Conscience 開源軟體">
+            <figcaption>圖片來源：Code of Conscience／AKQA</figcaption>
+          </figure>
+          <p>這個案例的價值，在於設計不只提醒人們「不要破壞環境」，而是把倫理原則轉化成機器可執行的限制，從行為發生的源頭介入。</p>
+
+          <h2 id="levis"><span class="case-number">03</span><br>Levi’s — Buy Better. Wear Longer.</h2>
+          <p>過去 15 年全球服裝消費量翻倍，也帶來過度消費危機。快時尚不僅造成環境負擔，也讓消費者陷入購買、短暫穿著、丟棄的循環。</p>
+          <p>Levi’s 以「Buy Better. Wear Longer.」倡議重新利用、延長穿著時間並減少消費足跡，透過短片與年輕世代的創作者、運動員與氣候行動者合作，讓永續不只是品牌主張，也成為可以被理解與參與的文化訊息。</p>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/03/04-2.png?resize=400%2C225&amp;ssl=1" alt="Levi’s 永續倡議短片">
+            <figcaption>圖片來源：Levi’s</figcaption>
+          </figure>
+
+          <h2 id="spring-pool"><span class="case-number">04</span><br>春池玻璃 — 春室 Glass Studio + The POOL</h2>
+          <p>春池玻璃是台灣具規模的廢棄玻璃回收業者，處理台灣近七成的玻璃回收。面對因添加氧化鋁、熔點較高而不易再次使用的 LCD 玻璃，團隊研發「輕質節能磚」，將廢料轉化為高科技綠建材。</p>
+          <p>春池也透過與台北 W 飯店、GQ 等跨界合作，讓回收玻璃經歷回收、重熔、再製，成為新的玻璃杯與產品。在循環經濟之外，也同時推進傳統產業的轉型與再認識。</p>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/03/05.png?resize=400%2C267&amp;ssl=1" alt="春池玻璃循環設計">
+            <figcaption>圖片來源：春池玻璃</figcaption>
+          </figure>
+
+          <h2 id="reflection">從案例回到設計師的日常</h2>
+          <p>看完企業案例後，我們也可以從自身開始思考如何實踐長期永續：減少購買快時尚商品、多使用環保器具、減少不必要的紙張輸出，並優先選擇可回收與環保材質。</p>
+          <div class="article-quote">
+            <p>慢設計不是延誤效率，而是用更深思熟慮的方式，重新建立人與產品、環境之間的連結。</p>
+          </div>
+          <p>身為設計師，我們也許可以用「慢設計」對抗只追求速度與效率的消費文化。設計的影響不只發生在產品完成的那一刻，也存在於材料如何被選擇、服務如何被使用，以及產品結束生命週期後會前往哪裡。</p>
+
+          <section class="article-sources" aria-labelledby="sources-title">
+            <h2 id="sources-title">參考資料</h2>
+            <ul>
+              <li><a href="https://www.akqa.com/news/code-of-conscience/" target="_blank" rel="noreferrer">AKQA — Code of Conscience</a></li>
+              <li><a href="https://www.akqa.com/work/levis/buy-better-wear-longer/" target="_blank" rel="noreferrer">Levi’s — Buy Better. Wear Longer.</a></li>
+              <li><a href="https://opinion.cw.com.tw/blog/profile/466/article/11799" target="_blank" rel="noreferrer">5% 設計的行動：為更多人設計出一個永續世界</a></li>
+              <li><a href="https://www.shoppingdesign.com.tw/post/view/7969" target="_blank" rel="noreferrer">如何在設計中思考永續發展？</a></li>
+              <li><a href="https://www.damanwoo.com/node/94825" target="_blank" rel="noreferrer">台北富邦銀行北台南分行空間改造</a></li>
+              <li><a href="https://csr.cw.com.tw/article/43297" target="_blank" rel="noreferrer">ESG 全辭典：設計思考與永續經營</a></li>
+            </ul>
+          </section>
+
+          <div class="article-original">
+            <p>本文最初於 2024 年 3 月 8 日刊登於 Comma Design Blog，此頁保留原文觀點並調整版面與部分文字節奏。<a href="https://blog.comma-design.com/2024/03/08/%e5%a6%82%e4%bd%95%e5%9c%a8%e8%a8%ad%e8%a8%88%e4%b8%ad%e6%80%9d%e8%80%83%e6%b0%b8%e7%ba%8c%e7%99%bc%e5%b1%95%ef%bc%9f%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90%e6%b0%b8%e7%ba%8c%e7%99%bc%e5%b1%95/" target="_blank" rel="noreferrer">查看原始文章</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section aria-labelledby="edenAuthorTitle" class="eden-author">
+    <div class="eden-author__inner">
+      <div class="eden-author__avatar"><img alt="Eden Chen" src="../images/eden-author-icon.png"></div>
+      <div class="eden-author__content">
+        <p class="eden-author__eyebrow">Author</p>
+        <h2 id="edenAuthorTitle">Eden Chen</h2>
+        <p class="eden-author__bio">專注於 AI Platform 與 Enterprise SaaS 的 Product Designer，關注產品體驗、Design System 與設計開發協作，並持續分享設計思考、產品實踐與技術學習。</p>
+        <div aria-label="作者聯絡方式" class="eden-author__socials"><a aria-label="寄 Email 給 Eden" href="mailto:s1u3n4@gmail.com"><i aria-hidden="true" class="fa-solid fa-envelope"></i></a><a aria-label="Eden 的 LinkedIn" href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="eden-related-blog" data-current-article="sustainable-design"></div>
+
+  <footer class="footer eden-site-footer" id="contact"><div class="container"><div class="eden-footer__main"><div class="eden-footer__brand"><a href="../index.html#about">Eden Design Lab</a><p>Product Designer</p></div><nav aria-label="頁尾導覽" class="eden-footer__nav"><a href="../index.html#about">About</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#case-studies">Case Studies</a><a href="../index.html#blog">Blog</a><a href="../index.html#contact">Contact</a></nav><div class="eden-footer__links"><a href="mailto:s1u3n4@gmail.com">Email</a><a href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank">LinkedIn</a><a class="eden-footer__resume" download href="../eden-product-designer-resume-2026.pdf">索取履歷 <span aria-hidden="true">↓</span></a></div></div><div class="eden-footer__bottom"><p>Designed and developed by Eden.</p><p>© 2026 All rights reserved.</p></div></div></footer>
+  <script src="../js/shared-layout.js?v=20260729-1"></script>
+  <a class="back-to-top" href="#top" aria-label="回到頁面頂端">↑</a>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/blog-data.js?v=20260721-1"></script>
+  <script src="../js/blog-related.js?v=20260721-1"></script>
+  <script src="../js/blog-article.js?v=20260714-1"></script>
+  <script>
+    const articleHeader = document.querySelector('.eden-site-header');
+    function toggleArticleMenu(button) {
+      const open = articleHeader.classList.toggle('is-menu-open');
+      button.setAttribute('aria-expanded', String(open));
+    }
+  </script>
+</body>
+</html>

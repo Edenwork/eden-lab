@@ -1,0 +1,157 @@
+/* Experience Count */
+
+.eden-count__header {
+  margin-bottom: 48px;
+}
+
+.count__inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.count-item {
+  min-width: 0;
+  /* min-height: 280px; */
+  padding: 36px 32px;
+  border-radius: 28px;
+  color: #0e1218;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.count-item:nth-child(1) {
+  background: var(--yellow);
+}
+
+.count-item:nth-child(2) {
+  background: #97b9a9;
+}
+
+.count-item:nth-child(3) {
+  background: #d9c7ef;
+}
+
+.count-item:nth-child(4) {
+  border: 1px solid #606569;
+  background: #616569;
+}
+
+/* 數字 */
+.count-item__text {
+  margin: 0;
+  color: #0e1218 !important;
+  font-size: clamp(64px, 6vw, 108px);
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+
+.count-value {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  color: inherit;
+}
+
+.count-number,
+.count-suffix {
+  display: inline;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  font-variant-numeric: tabular-nums;
+}
+.count-number:nth-child(4){
+  color:#fff
+}
+
+.count-suffix {
+  margin-left: 0;
+}
+
+/* 說明文字 */
+.count-item__subtext {
+  margin: 32px 0 0;
+  color: #0e1218;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.count-item__subtext .small {
+  display: inline-block;
+  margin-top: 4px;
+  color: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* 跑動時的輕微碼錶效果 */
+.count-number.is-ticking {
+  color: #0e1218;
+  animation: count-tick 0.16s ease-out;
+}
+
+@keyframes count-tick {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .main__count {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .count__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .count-item {
+    min-height: 250px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .main__count {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .eden-count__header {
+    margin-bottom: 32px;
+  }
+
+  .count__inner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .count-item {
+    min-height: 230px;
+    padding: 28px 24px;
+    border-radius: 24px;
+  }
+
+  .count-item__text {
+    font-size: clamp(68px, 22vw, 96px);
+  }
+
+  .count-item__subtext {
+    margin-top: 28px;
+    font-size: 20px;
+  }
+}

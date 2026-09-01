@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blog / Insights — Eden Design Lab</title>
+  <meta name="description" content="Eden Design Lab 的產品設計、AI Platform、Design System 與設計開發協作文章。">
+  <link rel="icon" href="images/eden-author-icon.png" type="image/png">
+  <link href="css/style.min.css?v=20260715-5" rel="stylesheet">
+  <link href="css/blog-list-page.css?v=20260729-1" rel="stylesheet">
+</head>
+
+<body class="eden-home eden-blog-index" id="top">
+  <div aria-hidden="true" class="eden-intro is-complete" id="edenIntro">
+    <div class="eden-intro__mark">Eden<span>.</span></div>
+    <p>PRODUCT SYSTEM / 2026</p>
+    <div class="eden-intro__track"><i></i></div>
+  </div>
+
+  <header class="header eden-site-header">
+    <div class="container">
+      <div class="eden-site-header__inner">
+        <a aria-label="回到首頁" class="eden-site-header__brand" href="index.html#about">Eden.</a>
+        <button aria-controls="edenPrimaryNav" aria-expanded="false" aria-label="開啟導覽選單"
+          class="eden-site-header__toggle" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="主要導覽" class="eden-site-nav" id="edenPrimaryNav">
+          <a href="index.html#about">About</a>
+          <a href="index.html#portfolio">Portfolio</a>
+          <a href="index.html#case-studies">Case Studies</a>
+          <a class="is-active" aria-current="page" href="blog.html">Blog</a>
+          <a class="eden-site-nav__cta" href="mailto:s1u3n4@gmail.com">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <main class="main" id="main-content">
+      <section class="eden-blog-index-hero" aria-labelledby="blog-page-title">
+        <div class="container eden-blog-index-hero__inner">
+          <div>
+            <p class="eden-blog-index-hero__eyebrow">Blog / Insights</p>
+            <h1 id="blog-page-title">設計文章<br>與實踐筆記</h1>
+          </div>
+          <p class="eden-blog-index-hero__intro">
+            分享企業 AI 產品、Design System 與設計開發協作的實務觀察，也記錄持續影響我設計判斷的閱讀與思考。
+          </p>
+        </div>
+      </section>
+
+      <section class="eden-blog-index-content" id="articles" aria-labelledby="article-list-title">
+        <div class="container">
+          <h2 class="sr-only" id="article-list-title">全部文章</h2>
+          <div class="eden-blog-index-toolbar">
+            <div class="eden-blog-filters" aria-label="文章分類篩選">
+              <button class="eden-blog-filter is-active" type="button" data-blog-filter="all"
+                aria-pressed="true">All</button>
+              <button class="eden-blog-filter" type="button" data-blog-filter="AI &amp; Product Design"
+                aria-pressed="false">AI &amp; Product Design</button>
+              <button class="eden-blog-filter" type="button" data-blog-filter="Design Systems"
+                aria-pressed="false">Design Systems</button>
+              <button class="eden-blog-filter" type="button" data-blog-filter="Design to Development"
+                aria-pressed="false">Design to Development</button>
+              <button class="eden-blog-filter" type="button" data-blog-filter="Design Reading Notes"
+                aria-pressed="false">Design Reading Notes</button>
+            </div>
+            <p class="eden-blog-result-count" data-blog-result-count aria-live="polite">共 6 篇文章</p>
+          </div>
+
+          <div class="eden-blog-list" data-blog-list="all" data-page-size="6"></div>
+
+          <div class="eden-blog-load-more-wrap">
+            <button class="eden-blog-load-more" type="button" data-blog-load-more hidden aria-hidden="true">
+              載入更多文章
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer eden-site-footer" id="contact">
+      <div class="container">
+        <div class="eden-footer__main">
+          <div class="eden-footer__brand">
+            <a href="index.html#about">Eden Design Lab</a>
+            <p>Product Designer</p>
+          </div>
+          <nav aria-label="頁尾導覽" class="eden-footer__nav">
+            <a href="index.html#about">About</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#case-studies">Case Studies</a>
+            <a href="blog.html">Blog</a>
+            <a href="mailto:s1u3n4@gmail.com">Contact</a>
+          </nav>
+          <div class="eden-footer__links">
+            <a href="mailto:s1u3n4@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer"
+              target="_blank">LinkedIn</a>
+            <a class="eden-footer__resume" download href="eden-product-designer-resume-2026.pdf">
+              索取履歷 <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+        <div class="eden-footer__bottom">
+          <p>Designed and developed by Eden.</p>
+          <p>© 2026 All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/shared-layout.js?v=20260729-1"></script>
+  </div>
+
+  <button aria-label="切換深色與淺色模式" class="switch-button" type="button">
+    <span aria-hidden="true" class="switch-button__icon switch-button__icon--light">☀</span>
+    <span aria-hidden="true" class="switch-button__icon switch-button__icon--dark">●</span>
+    <span aria-hidden="true" class="switch-button__thumb"></span>
+  </button>
+  <button aria-label="回到頁面頂端" class="eden-back-to-top" id="edenBackToTop" type="button">↑</button>
+
+  <script src="js/blog-data.js?v=20260729-1"></script>
+  <script src="js/blog-list.js?v=20260729-1"></script>
+  <script src="js/page-transitions.js?v=20260715-1"></script>
+  <script>
+    (function () {
+      const header = document.querySelector('.eden-site-header');
+      const toggle = document.querySelector('.eden-site-header__toggle');
+      const themeToggle = document.querySelector('.switch-button');
+      const backToTop = document.getElementById('edenBackToTop');
+
+      toggle.addEventListener('click', function () {
+        const open = header.classList.toggle('is-menu-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+
+      document.querySelectorAll('.eden-site-nav a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          header.classList.remove('is-menu-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      themeToggle.addEventListener('click', function () {
+        themeToggle.classList.toggle('switch-button--active');
+        document.body.classList.toggle('body--white');
+      });
+
+      function updateScrollState() {
+        header.classList.toggle('is-scrolled', window.scrollY > 16);
+        backToTop.classList.toggle('is-visible', window.scrollY > 480);
+      }
+
+      window.addEventListener('scroll', updateScrollState, { passive: true });
+      backToTop.addEventListener('click', function () {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+      updateScrollState();
+    })();
+  </script>
+</body>
+
+</html>

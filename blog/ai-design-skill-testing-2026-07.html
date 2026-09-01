@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="從 10 次測試整理 Company Design Skill 的製作方法：reference routing、Domain Work Object Gate 與可替換性測試。">
+  <title>我做了 10 次 AI Design Skill 測試，才發現真正難的不是寫 Prompt — Eden Design Lab</title>
+  <link href="../css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../css/style.min.css?v=20260714-16" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #11161d;
+      --muted: #65706b;
+      --paper: #f1f3f2;
+      --white: #fff;
+      --green: #6d9985;
+      --green-deep: #355d4d;
+      --line: #d8dedb;
+      --yellow: #f9d442;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.eden-article {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Clash Grotesk", "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+
+    .eden-article *,
+    .eden-article *::before,
+    .eden-article *::after {
+      box-sizing: border-box;
+    }
+
+    .article-hero {
+      min-height: 78vh;
+      display: grid;
+      align-items: end;
+      padding: 190px 20px 90px;
+      color: #fff;
+      background: #454c57;
+    }
+
+    .article-hero__inner,
+    .article-shell {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+    }
+
+    .article-hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin: 0 0 34px;
+      color: #aeb8b3;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .article-hero__meta span+span::before {
+      content: "•";
+      margin-right: 22px;
+      color: var(--green);
+    }
+
+    .article-hero h1 {
+      max-width: 1060px;
+      margin: 0;
+      font-size: clamp(44px, 6.5vw, 88px);
+      line-height: 1.08;
+      letter-spacing: -.052em;
+    }
+
+    .article-hero__lead {
+      max-width: 790px;
+      margin: 36px 0 0;
+      color: #d6dcda;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.75;
+    }
+
+    .article-cover {
+      display: block;
+      width: 100%;
+      height: min(56vw, 660px);
+      object-fit: cover;
+    }
+
+    .article-main {
+      padding: 100px 20px 120px;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 760px);
+      justify-content: center;
+      gap: 62px;
+    }
+
+    .article-toc {
+      position: sticky;
+      top: 130px;
+      align-self: start;
+    }
+
+    .article-toc p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .article-toc a {
+      display: block;
+      padding: 10px 0;
+      color: #6e7873;
+      font-size: 14px;
+      line-height: 1.4;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: color .2s ease;
+    }
+
+    .article-toc a:hover {
+      color: var(--green-deep);
+    }
+
+    .article-body {
+      min-width: 0;
+    }
+
+    .article-body p {
+      margin: 0 0 28px;
+      font-size: 18px;
+      line-height: 1.95;
+    }
+
+    .article-body h2 {
+      scroll-margin-top: 130px;
+      margin: 94px 0 28px;
+      font-size: clamp(31px, 4vw, 48px);
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .article-body h3 {
+      margin: 48px 0 18px;
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 32px;
+      padding-left: 24px;
+    }
+
+    .article-body li {
+      margin: 12px 0;
+      padding-left: 4px;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .article-intro {
+      padding: 38px;
+      background: var(--white);
+      border-radius: 28px;
+    }
+
+    .article-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-note {
+      margin: 34px 0 0;
+      padding: 22px 26px;
+      color: #2d333c;
+      background: #dfe8e3;
+      border-radius: 18px;
+    }
+
+    .article-note p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .article-code {
+      margin: 34px 0 42px;
+      padding: 26px 28px;
+      overflow: auto;
+      color: #dce6e1;
+      background: #1f2926;
+      border-radius: 20px;
+      font: 14px/1.75 "SFMono-Regular", Consolas, monospace;
+      white-space: pre;
+    }
+
+    .article-table-wrap {
+      margin: 34px 0 42px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+    }
+
+    .article-table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .article-table th,
+    .article-table td {
+      padding: 17px 20px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .article-table th {
+      color: #31453b;
+      background: #e7eeea;
+      font-size: 13px;
+      letter-spacing: .04em;
+    }
+
+    .article-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .article-callout {
+      margin: 58px 0;
+      padding: 34px 38px;
+      color: #0e1218;
+      background: #97b9a9;
+      border-radius: 28px;
+    }
+
+    .article-callout p {
+      margin: 0;
+      font-size: clamp(21px, 3vw, 29px);
+      font-weight: 600;
+      line-height: 1.55;
+      letter-spacing: -.02em;
+    }
+
+    .article-original {
+      margin-top: 76px;
+      padding: 28px 30px;
+      background: #dfe8e3;
+      border-radius: 22px;
+    }
+
+    .article-original p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 28px;
+      bottom: 28px;
+      z-index: 20;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      color: #fff;
+      background: var(--green);
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(15, 25, 21, .18);
+    }
+
+    @media(max-width:900px) {
+      .article-hero {
+        min-height: auto;
+        padding-top: 160px;
+      }
+
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-toc {
+        display: none;
+      }
+    }
+
+    @media(max-width:620px) {
+      .article-hero {
+        padding: 135px 18px 62px;
+      }
+
+      .article-hero__meta {
+        gap: 8px 12px;
+      }
+
+      .article-hero__meta span+span::before {
+        margin-right: 12px;
+      }
+
+      .article-main {
+        padding: 64px 18px 88px;
+      }
+
+      .article-intro,
+      .article-callout {
+        padding: 26px 24px;
+        border-radius: 22px;
+      }
+
+      .article-code {
+        margin: 28px 0 34px;
+        padding: 20px;
+        font-size: 12px;
+        border-radius: 18px;
+      }
+
+      .article-body p {
+        font-size: 17px;
+        line-height: 1.88;
+      }
+
+      .article-body h2 {
+        margin-top: 74px;
+      }
+
+      .article-table th,
+      .article-table td {
+        padding: 14px 16px;
+      }
+
+      .back-to-top {
+        right: 18px;
+        bottom: 18px;
+        width: 46px;
+        height: 46px;
+      }
+    }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="../css/blog-article.css?v=20260714-4" rel="stylesheet">
+</head>
+
+<body class="eden-home eden-article eden-blog-single" id="top">
+  <div class="blog-reading-progress" id="blogReadingProgress" aria-hidden="true"></div>
+  <header class="header eden-site-header">
+    <div class="container">
+      <div class="eden-site-header__inner">
+        <a aria-label="回到首頁" class="eden-site-header__brand" href="../index.html#about">Eden.</a>
+        <button aria-controls="edenPrimaryNav" aria-expanded="false" aria-label="開啟導覽選單"
+          class="eden-site-header__toggle" onclick="toggleArticleMenu(this)"
+          type="button"><span></span><span></span><span></span></button>
+        <nav aria-label="文章導覽" class="eden-site-nav" id="edenPrimaryNav">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#portfolio">Portfolio</a>
+          <a href="../index.html#case-studies">Case Studies</a>
+          <a class="is-active" href="../index.html#blog">Blog</a>
+          <a class="eden-site-nav__cta" href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="eden-blog-main">
+    <section class="article-hero">
+      <div class="article-hero__inner">
+        <div class="eden-blog-cover">
+          <img class="article-cover" src="../images/blog-img-01.jpg" alt="AI 設計技能測試與設計系統">
+        </div>
+        <div class="eden-blog-heading">
+          <p class="article-hero__meta"><span>設計筆記</span><span>2026.07</span><span>閱讀時間 12 分鐘</span></p>
+          <h1>我做了 10 次 AI 設計 Skill 測試，才發現真正難的不是寫提示詞</h1>
+          <p class="article-hero__lead">從公司設計技能（Company Design Skill）的 10 次實測，整理如何讓 AI 不只做出完整介面，而是真正理解品牌、產品情境與產業工作流程。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-main">
+      <div class="article-shell article-layout">
+        <article class="article-body">
+          <div class="article-intro" id="overview">
+            <p>這陣子我在做一件事：把公司的設計語言整理成一套可以給 AI 使用的公司設計技能（Company Design Skill）。我手上已經有設計系統（Design
+              System）、設計變數（token）、元件規則、介面範例，也有自己對產品介面的判斷。</p>
+            <p>於是我想測試：如果把這些整理成技能（Skill），Codex 在做使用者介面（UI）或網頁展示稿（demo）時，能不能不要每次都從零開始猜？做了 10
+              次測試後，我發現真正困難的不是寫一份很長的提示詞（Prompt），而是如何讓 AI 穩定做出一個屬於某家公司、某個產品情境與某個產業工作流程的介面。</p>
+          </div>
+
+          <h2 id="why">為什麼需要公司設計技能</h2>
+          <p>現在的 AI
+            已經很會做使用者介面。你給它一個需求，它可以產出側邊欄（sidebar）、卡片（card）、表格（table）、圖表（chart）、彈出視窗（modal）、按鈕狀態，也可以補上響應式設計（responsive）、滑過效果（hover）、空狀態（empty
+            state）與載入狀態（loading state）。從表面看，它已經能做出一個「像產品」的畫面。</p>
+          <p>但問題是，它做出來的東西常常「像產品」，卻不一定「像你的產品」。很多 AI 介面會回到熟悉的後台模板：左側側邊欄、中間列表、右側詳情欄，或是大量白色卡片、細框與指標列（metric
+            strip）。畫面乾淨完整，但辨識度不高。</p>
+          <p>如果只要把標題從「金融反洗錢調查」換成「資安事件調查」或「供應鏈異常調查」，整個介面仍然成立，那就代表它還沒有真正進入領域專屬設計（domain-specific design）。這也是我開始做公司設計技能的原因。
+          </p>
+          <div class="article-note">
+            <p>這套技能的目標不是商標（logo）或一般行銷頁（landing page），而是產品後台、AI 代理工具（AI agent tool）、管理工作台這類情境；因為這類介面最容易被 AI
+              做成「看起來都差不多」的樣子。</p>
+          </div>
+
+          <h2 id="system">Skill 與 AI Ready 設計系統的關係</h2>
+          <p>在整理過程中，我逐漸把設計系統（Design System）和技能（Skill）分開看。設計系統是規則與素材；技能則是讓 AI 知道怎麼使用這些規則與素材的工作流程。</p>
+          <p>設計系統會定義色彩、字體、設計變數、元件、語氣與版面方向。技能則要處理另一層問題：什麼任務會觸發？AI
+            應該先讀哪份參考資料（reference）？哪些規則是公司級？哪些只適用特定產品？哪些情況不能猜？做完後要怎麼驗證？</p>
+          <p>所以技能不是提示詞加長版。提示詞應該描述這一次的任務；技能應該描述長期穩定的工作方式。如果每次都靠一份超長提示詞，AI 可能這次做對，但下次又忘；也可能表面遵守所有要求，最後仍回到熟悉模板。</p>
+          <p>因此我最後採用「一個技能，多份參考資料」的結構：</p>
+          <pre class="article-code" aria-label="Company Design Skill 檔案結構">company-design/
+├── SKILL.md
+└── references/
+    ├── design.md
+    ├── tokens.md
+    ├── components.md
+    ├── html-style-guide.md
+    ├── accessibility.md
+    ├── aihub-product.md
+    ├── examples.md
+    ├── layout-patterns.md
+    ├── domain-patterns.md
+    ├── concept-development.md
+    ├── creative-directions.md
+    ├── icon-system.md
+    ├── visual-polish.md
+    └── future-work.md</pre>
+          <p><code>SKILL.md</code> 是入口檔，負責觸發條件、工作流程、參考資料路由（reference
+            routing）、停止點與驗證規則；其餘檔案則分別承接公司級方向、產品級規格、領域工作模式與最後的視覺精修。</p>
+
+          <h2 id="questions">製作前，要先問清楚什麼</h2>
+          <p>做技能前，最重要的不是立刻開始寫檔案，而是先把邊界問清楚。因為 AI 很會補完模糊需求：它會自動選一個看起來合理的方向，但那不一定是你真正要的。</p>
+          <ol>
+            <li><strong>這個技能的主要用途是什麼？</strong>是做使用者介面、商標、簡報、資料視覺化，還是某一種固定工作流程？這次我先做使用者介面／網頁用的公司設計技能，商標技能則獨立處理。</li>
+            <li><strong>這是公司級技能，還是產品級技能？</strong>我把 TWAI 視為公司級設計方向，把 AI Hub 視為產品案例；其他代理介面只繼承 TWAI 的大方向，不必全部長得像 AI Hub。
+            </li>
+            <li><strong>哪些事情 AI 不可以猜？</strong>當品牌名稱、產業、主要使用者或產品層級不清楚時，AI 應該停下來確認；使用者改變品牌或產業時，舊有簡述（brief）也不應被默認沿用。</li>
+            <li><strong>這個技能要允許多少創造力？</strong>品牌色、字體、設計變數、台灣用語、圖示系統與無障礙設計是固定的；版面、領域工作物件與關鍵互動則可以探索。</li>
+            <li><strong>怎麼判斷它做完了？</strong>沒有驗證標準，AI 很容易在最後給出漂亮的自評分數，卻沒有提供截圖、互動驗證或參考資料轉譯的證據。</li>
+          </ol>
+
+          <h2 id="routing">如何讓 AI 選對參考資料</h2>
+          <p>當參考資料變多後，不是每次全部讀就比較好。不同檔案有不同層級；技能的價值不是把所有知識一次塞進上下文，而是讓 AI 在需要時打開正確的抽屜。</p>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>任務類型</th>
+                  <th>應讀參考資料</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>一般產品介面／後台／代理工具</td>
+                  <td>
+                    <code>design.md</code>、<code>tokens.md</code>、<code>components.md</code>、<code>html-style-guide.md</code>、<code>accessibility.md</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AI Hub 或其延伸介面</td>
+                  <td>加讀 <code>aihub-product.md</code></td>
+                </tr>
+                <tr>
+                  <td>需要創意方向或避免普通儀表板</td>
+                  <td>加讀
+                    <code>concept-development.md</code>、<code>creative-directions.md</code>、<code>layout-patterns.md</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>反洗錢、製造業、資安、醫療等領域密集工作台</td>
+                  <td>加讀 <code>domain-patterns.md</code></td>
+                </tr>
+                <tr>
+                  <td>需要圖示規範</td>
+                  <td>加讀 <code>icon-system.md</code></td>
+                </tr>
+                <tr>
+                  <td>完成後精修與驗證</td>
+                  <td>加讀 <code>visual-polish.md</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>否則 AI 可能把產品級規則誤用成公司級規則，或把範例畫面當成固定模板。參考資料路由（reference routing）比參考資料數量更重要。</p>
+
+          <h2 id="creativity">保留創造力，但不偏離品牌</h2>
+          <p>做設計技能最難的地方，是不能把 AI 管到完全沒有創造力。規則太少，AI 會偏離品牌；規則太硬，AI 又只會排列固定元件。</p>
+          <p>
+            所以我把技能視為設計護欄，而不是畫面產生器。固定的是公司色彩、字體、設計變數、台灣用語、圖示系統、無障礙設計與基本互動狀態；可以探索的是第一屏構圖（composition）、領域專屬工作物件、資料視覺化方式、操作流程與不同代理的產品個性。
+          </p>
+          <p>這裡的創造力不是叫 AI 做得更酷，而是讓它找到任務裡最重要的工作物件，並把它變成介面的核心。因此我後來要求 AI 在實作前先做概念發展（concept development）：</p>
+          <ul>
+            <li>這個產品的主要工作物件是什麼？</li>
+            <li>使用者最重要的判斷是什麼？</li>
+            <li>有哪三種不同第一屏輪廓（silhouette）？</li>
+            <li>關鍵構圖（signature composition）佔第一屏多少？</li>
+            <li>關鍵互動（signature interaction）是否真的改變使用者決策？</li>
+          </ul>
+
+          <h2 id="domain-gate">領域工作物件關卡</h2>
+          <p>做了多次測試後，我補進技能裡最關鍵的一條規則，是領域工作物件關卡（Domain Work Object Gate）。當任務是反洗錢、製造業、資安、醫療、供應鏈這種領域密集（domain-heavy）工作台時，AI
+            不能只做一個有該產業文字的儀表板；它必須先找出該產業的真實工作物件，並把它變成第一屏主畫面。</p>
+          <p>
+            反洗錢的工作物件不是「警示卡片」，而是資金流向、帳戶分層、關係帳戶、最終受益人、制裁／政治公眾人物（PEP）命中距離、可疑交易報告（STR）申報門檻與凍結交易影響。製造業的工作物件不是「設備卡片」，而是產線流向、站點狀態、批次流、工單、製程管制帶、停線閘門、替代線分流、AOI
+            瑕疵熱區與隔離範圍。</p>
+          <p>這些工作物件不能只是出現在一張卡片裡，而應該主導第一屏，最好佔 50% 左右，甚至更多。這條規則對製造業測試特別有效。</p>
+          <div class="article-note">
+            <p>補上關卡前，AI 做出的製造業工作台已有製程路徑、站點熱點與異常傳播掃描列，整體仍像管理後台。補上後，A-03 產線軌道、Zone 4 異常、AOI 熱區、批次流、停線閘門、B-01
+              替代線分流與隔離區域開始進入主畫面，而不是被拆成一排站點卡片。</p>
+          </div>
+
+          <h2 id="replaceability">好看的 UI，不等於領域專屬 UI</h2>
+          <p>這是 10 次測試裡最大的體會。很多 AI 產出的介面，第一眼看會覺得完整、專業、乾淨；但如果把文案換掉，它可能還是可以變成別的產品。</p>
+          <div class="article-callout">
+            <p>所以我後來會反覆問自己：如果只把文案和資料換掉，這個畫面是不是還能變成醫療、供應鏈、資安或客服介面？如果可以，代表它還不夠具備領域專屬性（domain-specific）。</p>
+          </div>
+          <p>一個畫面如果只是上方關鍵績效指標（KPI）、左邊清單、中間圖表、右邊建議與下方事件紀錄，那它可以是反洗錢，也可以是資安或客服。但如果第一屏主畫面是資金分層、帳戶關係、PEP 距離、STR
+            門檻與凍結影響，它就比較難直接替換成別的領域；產線軌道、停線閘門、批次流、替代線分流與 AOI 熱區也是一樣。</p>
+
+          <h2 id="validation">如何驗證 AI 真的有使用 Skill</h2>
+          <p>做技能最容易產生的錯覺，是看到 AI 最後說「我已經讀取並使用參考資料」，就以為它真的用了。但 AI 很會寫完成報告：它可以列出讀過哪些檔案、說自己通過可替換性測試，或給出 8.5、9.4 這類自評分數。</p>
+          <p>真正要看的不是它有沒有宣稱使用，而是輸出有沒有被技能改變。我會看六件事：</p>
+          <ol>
+            <li>有沒有讀對參考資料，而不是只讀很多參考資料。</li>
+            <li>有沒有遵守參考資料路由，沒有把產品級資料誤用成公司級規則。</li>
+            <li>畫面是否真的出現技能定義的設計行為：設計變數、台灣用語、單一圖示系統、非 AI Hub 側邊欄、非普通三欄儀表板、領域工作物件與關鍵互動。</li>
+            <li>能不能通過可替換性測試（replaceability test）。</li>
+            <li>關鍵互動是否真的改變任務判斷，而不是只有滑過效果、提示訊息（toast）或普通詳情展開。</li>
+            <li>有沒有實際視覺品管（visual QA）。沒有瀏覽器檢查、截圖與響應式檢查，我不會接受「成品精緻度達到 8.5」這種自評。</li>
+          </ol>
+          <p>反洗錢測試是一個例子：AI 有讀參考資料，也做出了資金流、PEP、STR
+            與凍結影響，但整體骨架仍有點通用。製造業測試則比較明顯；補上領域工作物件關卡後，畫面真的從站點卡片變成產線軌道、批次流、停線閘門與替代線分流，這才是技能影響輸出的證據。</p>
+
+          <h2 id="next">下一版 Skill 要怎麼改</h2>
+          <p>目前這套技能已經能阻止 AI 回到最普通的 AI Hub 複製版（clone）或一般儀表板，但還沒有結束。製造業最新版雖然方向變好了，仍然有一點工程展示稿（demo）感：站點、批次標籤（chip）、AOI
+            地圖、Zone 閘門的資訊密度略擠，右側決策停靠欄（decision dock）也偏重。</p>
+          <p>所以下一版我會補的，不是再要求「更有創意」，而是加入密度清理階段（density cleanup pass）。也就是在關鍵工作物件成立後，AI
+            必須再做一次產品化精修，專門檢查標籤是否太多、邊框是否太多、文字是否貼邊、側欄是否過重、主視覺是否太擠，以及手機版是否只是把桌面往下堆。</p>
+          <p>這也讓我意識到，技能的成熟大致會經過幾個階段：</p>
+          <ol>
+            <li>讓 AI 不要偏離品牌。</li>
+            <li>讓 AI 不要回到通用版面。</li>
+            <li>讓 AI 找到領域工作物件。</li>
+            <li>讓 AI 把有概念的原型（prototype）精修成成熟產品畫面。</li>
+            <li>讓 AI 穩定產生可交付水準的介面。</li>
+          </ol>
+          <p>目前這套公司設計技能已經走到第三階段，正在往第四階段前進。</p>
+
+          <h2 id="takeaways">重點整理</h2>
+          <p>做完這 10 次測試後，我最大的感覺是：技能不是一份文件，而是一種把設計判斷變成 AI 工作流程的方法。</p>
+          <ul>
+            <li><strong>技能不是提示詞加長版。</strong>提示詞是一次性的任務描述；技能是可重複使用的判斷流程。</li>
+            <li><strong>設計系統是材料，技能是操作方法。</strong>設計系統定義色彩、設計變數、元件與語氣；技能定義何時讀、怎麼用、怎麼判斷與怎麼驗證。</li>
+            <li><strong>參考資料路由比參考資料數量更重要。</strong>不是每次全部讀就比較好，而是要讀對。</li>
+            <li><strong>好看的 UI 不等於領域專屬 UI。</strong>真正的領域專屬介面，是把該產業的工作物件變成畫面結構。</li>
+            <li><strong>AI 自評不能全信。</strong>分數要有證據；沒有截圖、瀏覽器檢查與互動驗證，就不該接受高分。</li>
+            <li><strong>技能要靠實測迭代。</strong>這套技能不是一次寫完，而是在反洗錢測試不夠滿意、製造業測試仍偏卡片、補上領域工作物件關卡、再測出明顯改善之後，才慢慢變清楚。</li>
+          </ul>
+          <div class="article-callout">
+            <p>做公司設計技能的目的，不是讓 AI 記住我的設計規範，而是讓 AI 學會用我的方式做設計判斷。</p>
+          </div>
+
+          <div class="article-original">
+            <p>本文記錄公司設計技能（Company Design Skill）的測試與迭代過程。封面目前暫以既有 AI Platform 圖片呈現，後續可替換為本次測試的實際介面截圖。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section aria-labelledby="edenAuthorTitle" class="eden-author">
+    <div class="eden-author__inner">
+      <div class="eden-author__avatar"><img alt="Eden Chen" src="../images/eden-author-icon.png"></div>
+      <div class="eden-author__content">
+        <p class="eden-author__eyebrow">Author</p>
+        <h2 id="edenAuthorTitle">Eden Chen</h2>
+        <p class="eden-author__bio">專注於 AI Platform 與 Enterprise SaaS 的 Product Designer，關注產品體驗、Design System
+          與設計開發協作，並持續分享設計思考、產品實踐與技術學習。</p>
+        <div aria-label="作者聯絡方式" class="eden-author__socials"><a aria-label="寄 Email 給 Eden"
+            href="mailto:s1u3n4@gmail.com"><i aria-hidden="true" class="fa-solid fa-envelope"></i></a><a
+            aria-label="Eden 的 LinkedIn" href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer"
+            target="_blank"><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="eden-related-blog" data-current-article="ai-design-skill-testing"></div>
+  <footer class="footer eden-site-footer" id="contact">
+    <div class="container">
+      <div class="eden-footer__main">
+        <div class="eden-footer__brand"><a href="../index.html#about">Eden Design Lab</a>
+          <p>Product Designer</p>
+        </div>
+        <nav aria-label="頁尾導覽" class="eden-footer__nav"><a href="../index.html#about">About</a><a
+            href="../index.html#portfolio">Portfolio</a><a href="../index.html#case-studies">Case Studies</a><a
+            href="../index.html#blog">Blog</a><a href="../index.html#contact">Contact</a></nav>
+        <div class="eden-footer__links"><a href="mailto:s1u3n4@gmail.com">Email</a><a
+            href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer"
+            target="_blank">LinkedIn</a><a class="eden-footer__resume" download
+            href="../eden-product-designer-resume-2026.pdf">索取履歷 <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="eden-footer__bottom">
+        <p>Designed and developed by Eden.</p>
+        <p>© 2026 All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/shared-layout.js?v=20260729-1"></script>
+  <a class="back-to-top" href="#top" aria-label="回到頁面頂端">↑</a>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/blog-data.js?v=20260721-1"></script>
+  <script src="../js/blog-related.js?v=20260721-1"></script>
+  <script src="../js/blog-article.js?v=20260714-1"></script>
+  <script>
+    const articleHeader = document.querySelector('.eden-site-header');
+    function toggleArticleMenu(button) {
+      const open = articleHeader.classList.toggle('is-menu-open');
+      button.setAttribute('aria-expanded', String(open));
+    }
+  </script>
+</body>
+
+</html>

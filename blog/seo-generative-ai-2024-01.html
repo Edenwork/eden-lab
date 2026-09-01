@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="回顧 2023 年 Google SGE、Bard、AI 內容農場、搜尋演算法與 Bing Copilot 帶來的 SEO 變化。">
+  <title>2023 年 SEO 回顧：生成式 AI 之年 — Eden Design Lab</title>
+  <link href="../css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../css/style.min.css?v=20260714-16" rel="stylesheet">
+  <style>
+    :root { --ink:#11161d; --muted:#65706b; --paper:#f1f3f2; --white:#fff; --green:#6d9985; --green-deep:#355d4d; --line:#d8dedb; --pink:#ff99c0; }
+    html { scroll-behavior:smooth; }
+    body.eden-article { margin:0; color:var(--ink); background:var(--paper); font-family:"Clash Grotesk","Noto Sans TC","PingFang TC",sans-serif; }
+    .eden-article *, .eden-article *::before, .eden-article *::after { box-sizing:border-box; }
+    .article-hero { min-height:78vh; display:grid; align-items:end; padding:190px 20px 90px; color:#fff; background:#454c57; }
+    .article-hero__inner, .article-shell { width:min(1160px,100%); margin:0 auto; }
+    .article-hero__meta { display:flex; flex-wrap:wrap; gap:10px 22px; margin:0 0 34px; color:#aeb8b3; font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
+    .article-hero__meta span + span::before { content:"•"; margin-right:22px; color:var(--green); }
+    .article-hero h1 { max-width:1000px; margin:0; font-size:clamp(44px,7.2vw,96px); line-height:1.04; letter-spacing:-.052em; }
+    .article-hero__lead { max-width:790px; margin:36px 0 0; color:#d6dcda; font-size:clamp(18px,2vw,24px); line-height:1.75; }
+    .article-cover { display:block; width:100%; height:min(56vw,660px); object-fit:cover; }
+    .article-main { padding:100px 20px 120px; }
+    .article-layout { display:grid; grid-template-columns:190px minmax(0,760px); justify-content:center; gap:62px; }
+    .article-toc { position:sticky; top:130px; align-self:start; }
+    .article-toc p { margin:0 0 18px; color:var(--muted); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    .article-toc a { display:block; padding:10px 0; color:#6e7873; font-size:14px; line-height:1.4; text-decoration:none; border-bottom:1px solid var(--line); transition:color .2s ease; }
+    .article-toc a:hover { color:var(--green-deep); }
+    .article-body { min-width:0; }
+    .article-body p { margin:0 0 28px; font-size:18px; line-height:1.95; }
+    .article-body h2 { scroll-margin-top:130px; margin:94px 0 28px; font-size:clamp(31px,4vw,48px); line-height:1.18; letter-spacing:-.03em; }
+    .article-body h3 { margin:48px 0 20px; font-size:24px; line-height:1.35; }
+    .article-body ul { margin:0 0 32px; padding-left:24px; }
+    .article-body li { margin:12px 0; padding-left:4px; font-size:17px; line-height:1.8; }
+    .article-intro { padding:38px; background:var(--white); border-radius:28px; }
+    .article-intro p:last-child { margin-bottom:0; }
+    .article-note { margin:34px 0 0; padding:22px 26px; color:#2d333c; background:#dfe8e3; border-radius:18px; }
+    .article-note p { margin:0; font-size:15px; line-height:1.75; }
+    .article-figure { margin:44px 0 26px; }
+    .article-figure img { display:block; width:100%; max-height:720px; object-fit:contain; border-radius:24px; background:#e1e5e3; }
+    .article-figure figcaption { margin-top:13px; color:var(--muted); font-size:13px; line-height:1.6; }
+    .article-figure a, .article-sources a, .article-original a, .article-body p a { color:var(--green-deep); text-underline-offset:3px; }
+    .case-number { display:inline-grid; place-items:center; width:38px; height:38px; margin-bottom:20px; color:#fff; background:var(--green-deep); border-radius:50%; font-size:13px; }
+    .article-callout { margin:58px 0; padding:34px 38px; color:#0e1218; background:#97b9a9; border-radius:28px; }
+    .article-callout p { margin:0; font-size:clamp(21px,3vw,29px); font-weight:600; line-height:1.55; letter-spacing:-.02em; }
+    .article-sources { margin-top:84px; padding-top:36px; border-top:1px solid var(--line); }
+    .article-sources h2 { margin:0 0 24px; font-size:26px; }
+    .article-sources li { color:var(--muted); font-size:15px; }
+    .article-original { margin-top:56px; padding:28px 30px; background:#dfe8e3; border-radius:22px; }
+    .article-original p { margin:0; font-size:15px; line-height:1.8; }
+    .article-footer { padding:70px 20px; color:#fff; background:#454c57; }
+    .article-footer__inner { width:min(1160px,100%); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .article-footer p { margin:0; color:#b8c0bd; }
+    .article-footer a { color:#fff; text-decoration:none; border-bottom:1px solid var(--green); }
+    .back-to-top { position:fixed; right:28px; bottom:28px; z-index:20; display:grid; place-items:center; width:52px; height:52px; color:#fff; background:var(--green); border-radius:50%; text-decoration:none; box-shadow:0 12px 30px rgba(15,25,21,.18); }
+    @media(max-width:900px) { .article-hero { min-height:auto; padding-top:160px; } .article-layout { grid-template-columns:1fr; } .article-toc { display:none; } }
+    @media(max-width:620px) {
+      .article-hero { padding:135px 18px 62px; }
+      .article-hero__meta { gap:8px 12px; }
+      .article-hero__meta span + span::before { margin-right:12px; }
+      .article-main { padding:64px 18px 88px; }
+      .article-intro, .article-callout { padding:26px 24px; border-radius:22px; }
+      .article-body p { font-size:17px; line-height:1.88; }
+      .article-body h2 { margin-top:74px; }
+      .article-figure img { border-radius:18px; }
+      .article-footer__inner { align-items:flex-start; flex-direction:column; }
+      .back-to-top { right:18px; bottom:18px; width:46px; height:46px; }
+    }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="../css/blog-article.css?v=20260714-4" rel="stylesheet">
+</head>
+<body class="eden-home eden-article eden-blog-single" id="top">
+  <div class="blog-reading-progress" id="blogReadingProgress" aria-hidden="true"></div>
+  <header class="header eden-site-header">
+    <div class="container">
+      <div class="eden-site-header__inner">
+        <a aria-label="回到首頁" class="eden-site-header__brand" href="../index.html#about">Eden.</a>
+        <button aria-controls="edenPrimaryNav" aria-expanded="false" aria-label="開啟導覽選單" class="eden-site-header__toggle" onclick="toggleArticleMenu(this)" type="button"><span></span><span></span><span></span></button>
+        <nav aria-label="文章導覽" class="eden-site-nav" id="edenPrimaryNav">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#portfolio">Portfolio</a>
+          <a href="../index.html#case-studies">Case Studies</a>
+          <a class="is-active" href="../index.html#blog">Blog</a>
+          <a class="eden-site-nav__cta" href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="eden-blog-main">
+    <section class="article-hero">
+      <div class="article-hero__inner">
+        <div class="eden-blog-cover">
+          <img class="article-cover" src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/01/SEO-20240121-3.jpg?fit=1163%2C626&amp;ssl=1" alt="2023 年 SEO 回顧：生成式 AI 之年">
+        </div>
+        <div class="eden-blog-heading">
+          <p class="article-hero__meta"><span>SEO &amp; Generative AI</span><span>原刊 2024.01.22</span><span>閱讀時間 8 分鐘</span></p>
+          <h1>2023 年 SEO 回顧：生成式 AI 之年</h1>
+          <p class="article-hero__lead">從 Google SGE、Bard、AI 內容農場、搜尋演算法到 Bing Copilot，回顧生成式 AI 如何改變搜尋體驗與 SEO。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-main">
+      <div class="article-shell article-layout">
+        <article class="article-body">
+          <div class="article-intro" id="overview">
+            <p>2023 年是搜尋與 SEO 歷史上變動最多的一年之一。Google 推出九項已確認的演算法更新，也公開全新的 AI 搜尋體驗——Search Generative Experience（SGE），以生成式 AI 整合連結、圖像、影片與追問功能。</p>
+            <p>Google 的實驗性對話 AI 服務 Bard 同樣成為焦點，之後升級使用 Gemini 模型並規劃整合至 Google Assistant。另一方面，微軟以 GPT-4 支援新版 Bing，讓生成式 AI 正式進入搜尋產品競爭。</p>
+          </div>
+          <div class="article-note"><p>時間註記：本文是 2023 年度回顧，保留 2024 年 1 月原刊時的產品名稱、觀察與市場狀態，適合作為生成式 AI 進入搜尋產品初期的紀錄。</p></div>
+
+          <h2 id="sge"><span class="case-number">01</span><br>Google 搜尋生成體驗 SGE</h2>
+          <p>Google 在 2023 年 5 月宣布全新的人工智慧搜尋體驗 Search Generative Experience，將生成式 AI 引入搜尋引擎，並由 PaLM 2、MUM 等大型語言模型支援。</p>
+          <p>SGE 是 Google 將生成式人工智慧融入搜尋體驗的方法。它和 Bing Chat 的操作方式略有不同，Google 希望新的搜尋能更視覺化、更容易消化、更個人化，也更貼近年輕使用者的搜尋習慣。</p>
+          <p>AI 生成答案會以快照形式呈現，包含連結、圖像、影片與後續問題，主要支援三種情境：</p>
+          <ul>
+            <li>面對全新或複雜主題，先整理多個子題，讓使用者繼續深入探索。</li>
+            <li>針對特定任務提供解決方法，例如推薦咖啡店或說明護照換發流程。</li>
+            <li>讓使用者追問，或從系統建議的步驟繼續探索相關問題。</li>
+          </ul>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/01/2023-seo-01.png?fit=1000%2C742&amp;ssl=1" alt="Google 搜尋生成體驗 SGE 介面">
+            <figcaption>Google 搜尋生成體驗 SGE</figcaption>
+          </figure>
+
+          <h2 id="bard"><span class="case-number">02</span><br>Google Bard 與 Gemini 模型</h2>
+          <p>Bard 是 Google 面對 ChatGPT 所推出的實驗性對話人工智慧服務。Google 起初強調 Bard 並不是搜尋引擎，隨著 SGE 發表後，兩者在搜尋、對話與個人助理上的關係逐漸清楚。</p>
+          <p>2023 年 12 月，Bard 升級使用 Gemini 模型，並朝向由生成式 AI 驅動的個人助理發展，規劃在行動裝置上的 Google Assistant 中運作。</p>
+          <p>初期 Bard 也面臨引用來源不足、回答品質與 SEO 建議違反 Google 自身指南等問題。這提醒我們：生成式 AI 能提升搜尋效率，但可信度、來源透明度與錯誤修正仍然是產品體驗的核心問題。</p>
+
+          <h2 id="content-farms"><span class="case-number">03</span><br>人工智慧內容農場</h2>
+          <p>內容農場通常透過大量生產缺乏原創性的文章獲取搜尋流量。生成式 AI 出現後，BankRate、CNET 等品牌也開始嘗試發布 AI 生成內容，使內容規模、品質與責任歸屬成為新的 SEO 議題。</p>
+          <div class="article-callout"><p>Google 當時的立場是：重點在內容品質，而不是內容以什麼方式製作。內容應該為人創造價值，而非只為取得搜尋排名。</p></div>
+          <p>同時，內容創作者也開始擔心 AI 使用既有文章訓練模型，進一步影響原始內容的流量與收益。《紐約時報》與 OpenAI、微軟之間的訴訟，便反映出生成式 AI、著作權與內容商業模式之間的矛盾。</p>
+
+          <h2 id="ranking"><span class="case-number">04</span><br>Google 排名揭示與演算法更新</h2>
+          <p>Google 在反壟斷審判中，被指控透過向 Apple 等公司支付巨額費用，維持其在裝置上的預設搜尋引擎地位。這不只是一場法律爭議，也讓搜尋市場的分配與競爭方式受到更多檢視。</p>
+          <p>Google 在 2023 年 11 月公布多項搜尋更新：</p>
+          <ul>
+            <li>改善排名，增加社群媒體、部落格與論壇中的第一手知識、個人觀點和經驗。</li>
+            <li>推出更個人化的搜尋體驗，包括關注按鈕、個人化結果與創作者資訊。</li>
+            <li>透過 Search Labs 測試可附加在搜尋結果上的 Notes 功能。</li>
+          </ul>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/01/2023-seo-02.png?resize=1536%2C964&amp;ssl=1" alt="2023 年 Google 演算法更新整理">
+            <figcaption>2023 年 Google 演算法更新／資料來源：Search Engine Land</figcaption>
+          </figure>
+
+          <h2 id="helpful-content">有用內容演算法更新</h2>
+          <p>2023 年 9 月的 Helpful Content Update 對產業帶來明顯影響。搜尋者經常遇到排名很高、實際內容卻無法解決問題的頁面；這些只為搜尋排名存在的內容，被視為「搜尋引擎優先內容」。</p>
+          <p>Google 希望降低這類網站的排名，同時提高為人設計、可靠且真正有幫助的網站能見度。更新重點包括：</p>
+          <ul>
+            <li>增加對網站託管第三方內容的說明與自我評估指引。</li>
+            <li>補充刪除內容、變更日期，以及建立可靠、以人為本內容的建議。</li>
+            <li>從指南移除「由人編寫」的表述，將焦點放在是否為使用者創造有用內容。</li>
+          </ul>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/01/2023-seo-03.png?fit=800%2C340&amp;ssl=1" alt="有用內容演算法更新前後比較">
+            <figcaption>Helpful Content Update 更新前後比較</figcaption>
+          </figure>
+
+          <h2 id="analytics">紀念 Google Analytics UA</h2>
+          <p>2023 年 7 月 1 日，Universal Analytics（UA／GA3）正式停止標準資料處理。對行銷與網站團隊而言，這不只是名詞改變，也涉及資料模型、報表邏輯與歷史資料保存方式的轉換。</p>
+          <p>GA4 的資料保存與事件設計方式，讓許多使用者必須重新理解分析工具。這也提醒產品與網站團隊：工具遷移不只是安裝新版，而是工作流程、資料定義與組織知識的重新建立。</p>
+
+          <h2 id="bing"><span class="case-number">05</span><br>Microsoft Bing、Bing Chat 與 Copilot</h2>
+          <p>2023 年初，微軟宣布將 ChatGPT 能力加入 Bing；2 月推出由 GPT-4 支援的新版 Bing，並透過候補名單吸引大量 Edge 使用者註冊。雖然獲得高度關注，Bing 的搜尋市占率成長仍然有限。</p>
+          <p>到了 11 月，Bing Chat 更名為 Copilot，生成式 AI 的定位也從單一搜尋功能，逐漸擴展為跨產品的工作與個人助理。</p>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/01/2023-seo-04.png?fit=1286%2C1210&amp;ssl=1" alt="Microsoft Bing 與 Google Bard 比較">
+            <figcaption>Microsoft Bing 與 Google Bard 比較</figcaption>
+          </figure>
+
+          <h2 id="outlook">Yahoo 與 2024 SEO 展望</h2>
+          <p>當時 Yahoo 預告將推出重新設計、強化 AI 功能的搜尋體驗。搜尋市場的競爭已經不只是結果頁排名，也開始轉向誰能以更個人化、更直接的方式協助使用者完成任務。</p>
+          <p>回到 2024 年初的觀察，SEO 的下一步將包含更多人工智慧。理解現代搜尋引擎、生成式 AI、檢索增強生成（RAG）與生成式引擎優化（GEO），逐漸成為內容與產品團隊的新課題。</p>
+          <div class="article-callout"><p>搜尋不再只是提供十個藍色連結，而是逐漸成為能理解問題、整理資訊並協助完成任務的產品體驗。</p></div>
+
+          <section class="article-sources" aria-labelledby="sources-title">
+            <h2 id="sources-title">參考資料</h2>
+            <ul>
+              <li><a href="https://searchengineland.com/google-algorithm-updates-2023-recap-435846" target="_blank" rel="noreferrer">Search Engine Land — Google algorithm updates 2023 recap</a></li>
+              <li><a href="https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html" target="_blank" rel="noreferrer">The New York Times — OpenAI and Microsoft lawsuit</a></li>
+              <li><a href="https://shopping.google.com/" target="_blank" rel="noreferrer">Google Shopping</a></li>
+            </ul>
+          </section>
+
+          <div class="article-original">
+            <p>本文最初於 2024 年 1 月 22 日刊登於 Comma Design Blog，此頁保留原文觀點並重新整理閱讀結構與版面。<a href="https://blog.comma-design.com/2024/01/22/2023%e5%b9%b4seo%e5%9b%9e%e9%a1%a7-%e7%94%9f%e6%88%90%e5%bc%8fai%e4%b9%8b%e5%b9%b4/" target="_blank" rel="noreferrer">查看原始文章</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section aria-labelledby="edenAuthorTitle" class="eden-author">
+    <div class="eden-author__inner">
+      <div class="eden-author__avatar"><img alt="Eden Chen" src="../images/eden-author-icon.png"></div>
+      <div class="eden-author__content">
+        <p class="eden-author__eyebrow">Author</p>
+        <h2 id="edenAuthorTitle">Eden Chen</h2>
+        <p class="eden-author__bio">專注於 AI Platform 與 Enterprise SaaS 的 Product Designer，關注產品體驗、Design System 與設計開發協作，並持續分享設計思考、產品實踐與技術學習。</p>
+        <div aria-label="作者聯絡方式" class="eden-author__socials"><a aria-label="寄 Email 給 Eden" href="mailto:s1u3n4@gmail.com"><i aria-hidden="true" class="fa-solid fa-envelope"></i></a><a aria-label="Eden 的 LinkedIn" href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="eden-related-blog" data-current-article="seo-generative-ai"></div>
+
+  <footer class="footer eden-site-footer" id="contact">
+    <div class="container">
+      <div class="eden-footer__main">
+        <div class="eden-footer__brand"><a href="../index.html#about">Eden Design Lab</a><p>Product Designer</p></div>
+        <nav aria-label="頁尾導覽" class="eden-footer__nav"><a href="../index.html#about">About</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#case-studies">Case Studies</a><a href="../index.html#blog">Blog</a><a href="../index.html#contact">Contact</a></nav>
+        <div class="eden-footer__links"><a href="mailto:s1u3n4@gmail.com">Email</a><a href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank">LinkedIn</a><a class="eden-footer__resume" download href="../eden-product-designer-resume-2026.pdf">索取履歷 <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="eden-footer__bottom"><p>Designed and developed by Eden.</p><p>© 2026 All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script src="../js/shared-layout.js?v=20260729-1"></script>
+  <a class="back-to-top" href="#top" aria-label="回到頁面頂端">↑</a>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/blog-data.js?v=20260721-1"></script>
+  <script src="../js/blog-related.js?v=20260721-1"></script>
+  <script src="../js/blog-article.js?v=20260714-1"></script>
+  <script>
+    const articleHeader = document.querySelector('.eden-site-header');
+    function toggleArticleMenu(button) {
+      const open = articleHeader.classList.toggle('is-menu-open');
+      button.setAttribute('aria-expanded', String(open));
+    }
+  </script>
+</body>
+</html>

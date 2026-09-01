@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="從提示設計、AI 工具到角色轉變，整理設計師面對生成式 AI 時值得建立的工作方法。">
+  <title>2024 年設計師需要了解的 AI 設計趨勢 — Eden Design Lab</title>
+  <link href="../css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../css/style.min.css?v=20260714-16" rel="stylesheet">
+  <style>
+    :root { --ink:#11161d; --muted:#65706b; --paper:#f1f3f2; --white:#fff; --green:#6d9985; --green-deep:#355d4d; --line:#d8dedb; --yellow:#f9d442; }
+    html { scroll-behavior:smooth; }
+    body.eden-article { margin:0; color:var(--ink); background:var(--paper); font-family:"Clash Grotesk","Noto Sans TC","PingFang TC",sans-serif; }
+    .eden-article *, .eden-article *::before, .eden-article *::after { box-sizing:border-box; }
+    .article-hero { min-height:78vh; display:grid; align-items:end; padding:190px 20px 90px; color:#fff; background:#454c57; }
+    .article-hero__inner, .article-shell { width:min(1160px,100%); margin:0 auto; }
+    .article-hero__meta { display:flex; flex-wrap:wrap; gap:10px 22px; margin:0 0 34px; color:#aeb8b3; font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
+    .article-hero__meta span + span::before { content:"•"; margin-right:22px; color:var(--green); }
+    .article-hero h1 { max-width:1040px; margin:0; font-size:clamp(44px,7vw,94px); line-height:1.04; letter-spacing:-.052em; }
+    .article-hero__lead { max-width:790px; margin:36px 0 0; color:#d6dcda; font-size:clamp(18px,2vw,24px); line-height:1.75; }
+    .article-cover { display:block; width:100%; height:min(56vw,660px); object-fit:cover; }
+    .article-main { padding:100px 20px 120px; }
+    .article-layout { display:grid; grid-template-columns:190px minmax(0,760px); justify-content:center; gap:62px; }
+    .article-toc { position:sticky; top:130px; align-self:start; }
+    .article-toc p { margin:0 0 18px; color:var(--muted); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    .article-toc a { display:block; padding:10px 0; color:#6e7873; font-size:14px; line-height:1.4; text-decoration:none; border-bottom:1px solid var(--line); }
+    .article-toc a:hover { color:var(--green-deep); }
+    .article-body { min-width:0; }
+    .article-body p { margin:0 0 28px; font-size:18px; line-height:1.95; }
+    .article-body h2 { scroll-margin-top:130px; margin:94px 0 28px; font-size:clamp(31px,4vw,48px); line-height:1.18; letter-spacing:-.03em; }
+    .article-body h3 { margin:48px 0 20px; font-size:24px; line-height:1.35; }
+    .article-body ul { margin:0 0 32px; padding-left:24px; }
+    .article-body li { margin:12px 0; padding-left:4px; font-size:17px; line-height:1.8; }
+    .article-intro { padding:38px; background:var(--white); border-radius:28px; }
+    .article-intro p:last-child { margin-bottom:0; }
+    .article-note { margin:34px 0 0; padding:22px 26px; color:#2d333c; background:#dfe8e3; border-radius:18px; }
+    .article-note p { margin:0; font-size:15px; line-height:1.75; }
+    .article-figure { margin:44px 0 26px; }
+    .article-figure img { display:block; width:100%; max-height:720px; object-fit:contain; border-radius:24px; background:#e1e5e3; }
+    .article-figure figcaption { margin-top:13px; color:var(--muted); font-size:13px; line-height:1.6; }
+    .article-body a, .article-original a { color:var(--green-deep); text-underline-offset:3px; }
+    .case-number { display:inline-grid; place-items:center; width:38px; height:38px; margin-bottom:20px; color:#fff; background:var(--green-deep); border-radius:50%; font-size:13px; }
+    .article-callout { margin:58px 0; padding:34px 38px; color:#0e1218; background:#97b9a9; border-radius:28px; }
+    .article-callout p { margin:0; font-size:clamp(21px,3vw,29px); font-weight:600; line-height:1.55; letter-spacing:-.02em; }
+    .tool-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:32px 0 46px; }
+    .tool-list div { padding:22px; background:#fff; border-radius:18px; }
+    .tool-list strong { display:block; margin-bottom:7px; font-size:18px; }
+    .tool-list span { color:var(--muted); font-size:14px; line-height:1.6; }
+    .article-original { margin-top:76px; padding:28px 30px; background:#dfe8e3; border-radius:22px; }
+    .article-original p { margin:0; font-size:15px; line-height:1.8; }
+    .article-footer { padding:70px 20px; color:#fff; background:#454c57; }
+    .article-footer__inner { width:min(1160px,100%); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .article-footer p { margin:0; color:#b8c0bd; }
+    .article-footer a { color:#fff; text-decoration:none; border-bottom:1px solid var(--green); }
+    .back-to-top { position:fixed; right:28px; bottom:28px; z-index:20; display:grid; place-items:center; width:52px; height:52px; color:#fff; background:var(--green); border-radius:50%; text-decoration:none; box-shadow:0 12px 30px rgba(15,25,21,.18); }
+    @media(max-width:900px) { .article-hero { min-height:auto; padding-top:160px; } .article-layout { grid-template-columns:1fr; } .article-toc { display:none; } }
+    @media(max-width:620px) {
+      .article-hero { padding:135px 18px 62px; }
+      .article-hero__meta { gap:8px 12px; }
+      .article-hero__meta span + span::before { margin-right:12px; }
+      .article-main { padding:64px 18px 88px; }
+      .article-intro, .article-callout { padding:26px 24px; border-radius:22px; }
+      .article-body p { font-size:17px; line-height:1.88; }
+      .article-body h2 { margin-top:74px; }
+      .article-figure img { border-radius:18px; }
+      .tool-list { grid-template-columns:1fr; }
+      .article-footer__inner { align-items:flex-start; flex-direction:column; }
+      .back-to-top { right:18px; bottom:18px; width:46px; height:46px; }
+    }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="../css/blog-article.css?v=20260714-4" rel="stylesheet">
+</head>
+<body class="eden-home eden-article eden-blog-single" id="top">
+  <div class="blog-reading-progress" id="blogReadingProgress" aria-hidden="true"></div>
+  <header class="header eden-site-header">
+    <div class="container">
+      <div class="eden-site-header__inner">
+        <a aria-label="回到首頁" class="eden-site-header__brand" href="../index.html#about">Eden.</a>
+        <button aria-controls="edenPrimaryNav" aria-expanded="false" aria-label="開啟導覽選單" class="eden-site-header__toggle" onclick="toggleArticleMenu(this)" type="button"><span></span><span></span><span></span></button>
+        <nav aria-label="文章導覽" class="eden-site-nav" id="edenPrimaryNav">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#portfolio">Portfolio</a>
+          <a href="../index.html#case-studies">Case Studies</a>
+          <a class="is-active" href="../index.html#blog">Blog</a>
+          <a class="eden-site-nav__cta" href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="eden-blog-main">
+    <section class="article-hero">
+      <div class="article-hero__inner">
+        <div class="eden-blog-cover">
+          <img class="article-cover" src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/01/AI-20240107.jpg?fit=1163%2C627&amp;ssl=1" alt="2024 年設計師需要了解的 AI 設計趨勢">
+        </div>
+        <div class="eden-blog-heading">
+          <p class="article-hero__meta"><span>AI &amp; Design</span><span>原刊 2024.01.07</span><span>閱讀時間 4 分鐘</span></p>
+          <h1>2024 年設計師需要了解的 AI 設計趨勢</h1>
+          <p class="article-hero__lead">從提示設計、AI 工具到角色轉變，整理設計師面對生成式 AI 時值得建立的工作方法。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-main">
+      <div class="article-shell article-layout">
+        <article class="article-body">
+          <div class="article-intro" id="overview">
+            <p>從 AI 大爆發的 2023 年前進到 2024 年，人工智慧無可避免地開始改變設計師的工作方式。UX Tools 的 Designer’s Toolkit 調查顯示，當時已有 65% 的受訪設計師在工作中使用 AI。</p>
+            <p>AI 能協助設計師提高效率，也可能重新分配原本由設計師負責的工作。重點不只是「有沒有使用 AI」，而是能否把工具放進正確的問題、流程與決策情境裡。</p>
+          </div>
+          <div class="article-note"><p>時間註記：本文保留 2024 年 1 月原刊時的工具版本與產業觀察，適合作為生成式 AI 進入設計工作初期的紀錄。</p></div>
+
+          <h2 id="prompting"><span class="case-number">01</span><br>更精確地與 AI 對話</h2>
+          <p>UX Tools 的問卷中，有 84% 使用 AI 的設計師提到 ChatGPT。要讓對話真正協助設計工作，提示內容需要比「幫我想一個介面」更具體。</p>
+          <h3>建立清楚且具限制條件的提示</h3>
+          <p>提示應包含問題背景、目標使用者、設計原則、限制與期望輸出，讓 AI 的回答能貼近實際情境，而不是只生成通用建議。</p>
+          <h3>要求 AI 自我評估</h3>
+          <p>除了提出方案，也可以請 AI 評估功能對可用性、使用者滿意度或商業目標的可能影響，並列出實施過程中的風險與挑戰。</p>
+          <h3>把建議連回產品目標</h3>
+          <p>將建議與提高參與度、強化品牌價值、提升留存率或收入成長等目標連結，才能判斷方案是否真的值得執行。</p>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/01/uiux-1.jpeg?resize=600%2C433&amp;ssl=1" alt="UX Tools 2023 設計工具調查結果">
+            <figcaption>UX Tools 2023 設計工具調查結果</figcaption>
+          </figure>
+
+          <h2 id="tools"><span class="case-number">02</span><br>把 AI 工具放進工作流程</h2>
+          <p>優秀的設計師不需要追逐每一個新工具，但應理解新技術能做到什麼，並選擇適合自己工作流程的工具進行測試。</p>
+          <div class="tool-list">
+            <div><strong>Framer／Webflow</strong><span>快速建立與驗證網站體驗，適合從設計延伸到可操作的成果。</span></div>
+            <div><strong>Midjourney／Visual Electric</strong><span>探索視覺方向、情境圖與概念素材，加速早期發散。</span></div>
+            <div><strong>ChatGPT Plus</strong><span>協助文字整理、研究發想、對話測試與語意導向的圖像生成。</span></div>
+            <div><strong>tldraw</strong><span>將草圖與白板內容轉化為可互動的功能原型。</span></div>
+            <div><strong>Notion AI</strong><span>從工作區尋找資訊，整理訪談、調查與可用性測試資料。</span></div>
+            <div><strong>現有設計工具</strong><span>AI 的價值不一定來自全新工具，也可能是改善既有流程中的重複工作。</span></div>
+          </div>
+          <figure class="article-figure">
+            <img src="https://i0.wp.com/blog.comma-design.com/wp-content/uploads/2024/01/uiux-2.jpg?resize=1536%2C1240&amp;ssl=1" alt="設計師問卷中包含 AI 關鍵字的回覆">
+            <figcaption>設計工具調查中，提及 AI 的設計師回覆</figcaption>
+          </figure>
+
+          <h2 id="role"><span class="case-number">03</span><br>設計師不會消失，但角色會改變</h2>
+          <p>設計工具持續快速更新，很容易讓人產生資訊焦慮：如果沒有立刻學會某個工具，是否就會跟不上時代？比較健康的方法，是先多方接觸與理解工具的能力，再判斷是否值得投入時間。</p>
+          <div class="article-callout"><p>真正的風險不是 AI 工具本身，而是停止理解新技術、拒絕調整工作方式，也沒有建立更高層次的設計判斷。</p></div>
+          <p>當小型企業也能透過提示快速產生網站與介面，單純執行畫面的需求可能下降；但研究、產品策略、系統規劃、跨部門協作與設計品質判斷，仍然需要能理解情境的人來推動。</p>
+
+          <h2 id="future">什麼樣的設計師更有競爭力？</h2>
+          <p>在預算緊縮的環境中，能領導研究與策略，並在 PM、設計與工程之間協作的通才型設計師會更受重視。</p>
+          <p>長期而言，真正能讓設計師脫穎而出的關鍵，不是使用了多少 AI 工具，而是能否以更具策略性的方式思考問題、讓設計決策具有清楚目的，並在創作中建立自己的觀點。</p>
+
+          <div class="article-original">
+            <p>本文最初於 2024 年 1 月 7 日刊登於 Comma Design Blog，此頁保留原文觀點並重新整理閱讀結構與版面。參考資料：<a href="https://uxtools.co/survey/2023/toolkit" target="_blank" rel="noreferrer">UX Tools — Designer’s Toolkit 2023</a>。<a href="https://blog.comma-design.com/2024/01/07/2024-%e5%b9%b4%e8%a8%ad%e8%a8%88%e5%b8%ab%e9%9c%80%e8%a6%81%e4%ba%86%e8%a7%a3%e7%9a%84-ai-%e8%b6%a8%e5%8b%a2/" target="_blank" rel="noreferrer">查看原始文章</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section aria-labelledby="edenAuthorTitle" class="eden-author">
+    <div class="eden-author__inner">
+      <div class="eden-author__avatar"><img alt="Eden Chen" src="../images/eden-author-icon.png"></div>
+      <div class="eden-author__content">
+        <p class="eden-author__eyebrow">Author</p>
+        <h2 id="edenAuthorTitle">Eden Chen</h2>
+        <p class="eden-author__bio">專注於 AI Platform 與 Enterprise SaaS 的 Product Designer，關注產品體驗、Design System 與設計開發協作，並持續分享設計思考、產品實踐與技術學習。</p>
+        <div aria-label="作者聯絡方式" class="eden-author__socials"><a aria-label="寄 Email 給 Eden" href="mailto:s1u3n4@gmail.com"><i aria-hidden="true" class="fa-solid fa-envelope"></i></a><a aria-label="Eden 的 LinkedIn" href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="eden-related-blog" data-current-article="ai-design-trends"></div>
+
+  <footer class="footer eden-site-footer" id="contact">
+    <div class="container">
+      <div class="eden-footer__main">
+        <div class="eden-footer__brand"><a href="../index.html#about">Eden Design Lab</a><p>Product Designer</p></div>
+        <nav aria-label="頁尾導覽" class="eden-footer__nav"><a href="../index.html#about">About</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#case-studies">Case Studies</a><a href="../index.html#blog">Blog</a><a href="../index.html#contact">Contact</a></nav>
+        <div class="eden-footer__links"><a href="mailto:s1u3n4@gmail.com">Email</a><a href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank">LinkedIn</a><a class="eden-footer__resume" download href="../eden-product-designer-resume-2026.pdf">索取履歷 <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="eden-footer__bottom"><p>Designed and developed by Eden.</p><p>© 2026 All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script src="../js/shared-layout.js?v=20260729-1"></script>
+  <a class="back-to-top" href="#top" aria-label="回到頁面頂端">↑</a>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/blog-data.js?v=20260721-1"></script>
+  <script src="../js/blog-related.js?v=20260721-1"></script>
+  <script src="../js/blog-article.js?v=20260714-1"></script>
+  <script>
+    const articleHeader = document.querySelector('.eden-site-header');
+    function toggleArticleMenu(button) {
+      const open = articleHeader.classList.toggle('is-menu-open');
+      button.setAttribute('aria-expanded', String(open));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="企業 AI Platform 產品架構設計筆記">
+  <title>如何從企業需求定義 AI Platform 的產品架構 — Eden Design Lab</title>
+  <link href="../css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../css/style.min.css?v=20260714-16" rel="stylesheet">
+  <style>
+    body.eden-draft { margin: 0; color: #fff; background: #454c57; font-family: "Clash Grotesk", "Noto Sans TC", "PingFang TC", sans-serif; }
+    .eden-draft main { min-height: 100vh; padding: 170px 20px 120px; }
+    .eden-draft__article { width: min(900px, 100%); margin: 0 auto; }
+    .eden-draft__eyebrow { margin: 0 0 24px; color: #6d9985; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .eden-draft h1 { max-width: 850px; margin: 0; font-size: clamp(42px, 7vw, 82px); line-height: 1.08; letter-spacing: -.045em; }
+    .eden-draft__lead { max-width: 720px; margin: 36px 0 0; color: #d7dadd; font-size: clamp(18px, 2vw, 23px); line-height: 1.8; }
+    .eden-draft__notice { margin-top: 72px; padding: 30px; color: #0e1218; background: #f9d442; border-radius: 24px; }
+    .eden-draft__notice strong { display: block; margin-bottom: 8px; font-size: 20px; }
+    .eden-draft__notice p { margin: 0; line-height: 1.7; }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="../css/blog-article.css?v=20260714-4" rel="stylesheet">
+</head>
+<body class="eden-home eden-draft eden-blog-single" id="top">
+  <div class="blog-reading-progress" id="blogReadingProgress" aria-hidden="true"></div>
+  <header class="header eden-site-header">
+    <div class="container">
+      <div class="eden-site-header__inner">
+        <a aria-label="回到首頁" class="eden-site-header__brand" href="../index.html#about">Eden.</a>
+        <button aria-controls="edenPrimaryNav" aria-expanded="false" aria-label="開啟導覽選單" class="eden-site-header__toggle" onclick="toggleDraftMenu(this)" type="button"><span></span><span></span><span></span></button>
+        <nav aria-label="文章導覽" class="eden-site-nav" id="edenPrimaryNav">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#portfolio">Portfolio</a>
+          <a href="../index.html#case-studies">Case Studies</a>
+          <a class="is-active" href="../index.html#blog">Blog</a>
+          <a class="eden-site-nav__cta" href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="eden-blog-main">
+    <section class="article-hero">
+      <div class="article-hero__inner">
+        <div class="eden-blog-cover">
+          <img class="article-cover" src="../images/group-img-5.jpg" alt="企業 AI Platform 產品架構設計">
+        </div>
+        <div class="eden-blog-heading">
+          <p class="article-hero__meta"><span>Design Notes</span><span>2026.07</span><span>AI Platform</span></p>
+          <h1>如何從企業需求定義 AI Platform 的產品架構</h1>
+          <p class="article-hero__lead">從商業目標、使用情境到資訊架構，整理企業 AI 產品早期規劃的思考方式。</p>
+        </div>
+      </div>
+    </section>
+    <section class="article-main">
+      <div class="article-shell article-layout">
+        <article class="article-body">
+          <div class="eden-blog-draft-note">
+            <strong>文章內容整理中</strong>
+            <p>正式內容完成後會直接更新在這個網址，月份與文章主題不再改動。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <section aria-labelledby="edenAuthorTitle" class="eden-author">
+    <div class="eden-author__inner">
+      <div class="eden-author__avatar"><img alt="Eden Chen" src="../images/eden-author-icon.png"></div>
+      <div class="eden-author__content">
+        <p class="eden-author__eyebrow">Author</p>
+        <h2 id="edenAuthorTitle">Eden Chen</h2>
+        <p class="eden-author__bio">專注於 AI Platform 與 Enterprise SaaS 的 Product Designer，關注產品體驗、Design System 與設計開發協作，並持續分享設計思考、產品實踐與技術學習。</p>
+        <div aria-label="作者聯絡方式" class="eden-author__socials"><a aria-label="寄 Email 給 Eden" href="mailto:s1u3n4@gmail.com"><i aria-hidden="true" class="fa-solid fa-envelope"></i></a><a aria-label="Eden 的 LinkedIn" href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="eden-related-blog" data-current-article="enterprise-ai-platform"></div>
+  <footer class="footer eden-site-footer" id="contact"><div class="container"><div class="eden-footer__main"><div class="eden-footer__brand"><a href="../index.html#about">Eden Design Lab</a><p>Product Designer</p></div><nav aria-label="頁尾導覽" class="eden-footer__nav"><a href="../index.html#about">About</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#case-studies">Case Studies</a><a href="../index.html#blog">Blog</a><a href="../index.html#contact">Contact</a></nav><div class="eden-footer__links"><a href="mailto:s1u3n4@gmail.com">Email</a><a href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank">LinkedIn</a><a class="eden-footer__resume" download href="../eden-product-designer-resume-2026.pdf">索取履歷 <span aria-hidden="true">↓</span></a></div></div><div class="eden-footer__bottom"><p>Designed and developed by Eden.</p><p>© 2026 All rights reserved.</p></div></div></footer>
+  <script src="../js/shared-layout.js?v=20260729-1"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/blog-data.js?v=20260721-1"></script>
+  <script src="../js/blog-related.js?v=20260721-1"></script>
+  <script src="../js/blog-article.js?v=20260714-1"></script>
+  <script>
+    const draftHeader = document.querySelector('.eden-site-header');
+    function toggleDraftMenu(button) {
+      const open = draftHeader.classList.toggle('is-menu-open');
+      button.setAttribute('aria-expanded', String(open));
+    }
+  </script>
+</body>
+</html>

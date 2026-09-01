@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Product Designer 以 Playwright 與 Python 將重複 UI 驗收轉為可維護 Regression Testing 的案例研究。">
+  <title>UI 自動化測試 Case Study — Eden Design Lab</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="/css/case-study.css?v=20260828-1" rel="stylesheet">
+
+  
+</head>
+<body class="case-study-page">
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="主要導覽">
+      <div class="container-fluid header-shell">
+        <a class="navbar-brand" href="#top">Eden Design Lab</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#caseNavbar" aria-controls="caseNavbar" aria-expanded="false" aria-label="開啟導覽">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="caseNavbar">
+          <div class="navbar-nav ms-auto align-items-lg-center">
+            <a class="nav-link" href="#overview">Case overview</a>
+            <a class="nav-link" href="#evidence">Test evidence</a>
+            <a class="nav-link nav-link--back" href="../index.html#case-studies"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to portfolio</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <aside class="case-toc" aria-label="頁內目錄">
+    <small>On this page</small>
+    <a href="#overview">Overview</a>
+    <a href="#problem">Problem</a>
+    <a href="#decision">Decision</a>
+    <a href="#system">Test System</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#outcome">Outcome</a>
+    <a href="#reflection">Reflection</a>
+  </aside>
+
+  <main>
+    <section class="case-hero" id="top">
+      <div class="case-container">
+        <div class="case-label"><span></span> Case 05 · UI Automation</div>
+        <h1>將重複的 UI 驗收，<br>轉為可持續執行的<br><em>產品品質流程。</em></h1>
+
+        <div class="row g-4 align-items-end hero-summary">
+          <div class="col-lg-8">
+            <p>以 Playwright + Python 建立 UI 自動化測試，將頁面導覽、語言切換與後台管理流程整理成可重複執行的 Regression Testing。</p>
+          </div>
+          <div class="col-lg-4">
+            <aside><strong>My contribution</strong>Test planning · Page Object<br>Test documentation · UI validation</aside>
+          </div>
+        </div>
+
+        <div class="case-meta row row-cols-2 row-cols-lg-5 g-0">
+          <div class="col"><small>Role</small><strong>Product Designer</strong></div>
+          <div class="col"><small>Focus</small><strong>UI Automation</strong></div>
+          <div class="col"><small>Stack</small><strong>Playwright · Python</strong></div>
+          <div class="col"><small>Coverage</small><strong>22 Test Cases</strong></div>
+          <div class="col"><small>Status</small><strong>持續擴充中</strong></div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="browser-mock" aria-label="AI Hub 管理介面與自動化測試示意圖">
+            <div class="browser-bar">
+              <div class="browser-dots"><i></i><i></i><i></i></div>
+              <div class="browser-address">ai-hub.test / platform-manager</div>
+              <span>TEST</span>
+            </div>
+            <div class="browser-body">
+              <aside class="mock-sidebar">
+                <strong>AI HUB</strong>
+                <span class="active">總覽</span><span>使用者管理</span><span>群組管理</span><span>模型管理</span>
+              </aside>
+              <div class="mock-main">
+                <div class="mock-heading"><div><small>PLATFORM MANAGER</small><b>總覽</b></div><i></i></div>
+                <div class="mock-filters"><span>全部模型 <i class="fa-solid fa-chevron-down"></i></span><span>今天 <i class="fa-solid fa-chevron-down"></i></span></div>
+                <div class="mock-table">
+                  <div class="mock-table-head"><b>使用者</b><b>Token 數</b></div>
+                  <div class="mock-table-row"><i style="width:72%"></i><span>1</span></div>
+                  <div class="mock-table-row"><i style="width:56%"></i><span>2</span></div>
+                  <div class="mock-table-row"><i style="width:43%"></i><span>3</span></div>
+                </div>
+                <span class="locator-tag locator-tag--one"><i class="fa-solid fa-check"></i> visible</span>
+                <span class="locator-tag locator-tag--two"><i class="fa-solid fa-check"></i> role=button</span>
+              </div>
+            </div>
+            <div class="test-runner">
+              <div class="runner-head"><span><i></i> pytest</span><small>00:21.84</small></div>
+              <p><b>$</b> python -m pytest -v</p>
+              <div class="runner-progress"><i></i></div>
+              <strong><i class="fa-solid fa-circle-check"></i> 22 passed in 21.84s</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-disclosure"><strong>公開說明</strong><p>為保護內部資訊，產品介面以重製示意呈現；測試編號、技術架構與執行結果來自實際測試文件。</p></div>
+      </div>
+    </section>
+
+    <section class="case-section" id="overview">
+      <div class="case-narrow">
+        <p class="case-eyebrow">00 · Overview</p>
+        <h2>從設計交付後的人工檢查，延伸到可以反覆驗證的產品流程。</h2>
+        <p class="case-lead">功能持續迭代後，每次修改都要重新確認頁面顯示、操作流程與互動結果。我將這些有明確步驟與預期結果的工作整理成 Test Case，再交由瀏覽器自動執行。</p>
+        <blockquote>設計不只停在 Figma；產品上線後的實際呈現與互動，也需要能被持續驗證。</blockquote>
+        <div class="row g-3 overview-cards">
+          <div class="col-md-6"><article><span>01</span><h3>設計視角</h3><p>把需求、介面狀態與操作結果轉譯為使用者可理解的驗證條件。</p></article></div>
+          <div class="col-md-6"><article><span>02</span><h3>工程方法</h3><p>使用 Page Object、共用流程與語意化 Locator，降低測試重複與維護成本。</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section section-white" id="problem">
+      <div class="case-container">
+        <p class="case-eyebrow">01 · Problem</p>
+        <h2>問題不是「有沒有測」，而是每次改版都要從頭重做同一輪確認。</h2>
+        <div class="problem-list">
+          <article><span>01</span><h3>重複的人工作業</h3><p>側邊導覽、語言切換與後台功能，每次修改後都需要逐頁重新操作確認。</p></article>
+          <article><span>02</span><h3>回歸問題容易遺漏</h3><p>人工驗收依賴記憶與當下注意力，功能增加後更難維持固定範圍。</p></article>
+          <article><span>03</span><h3>設計品質缺少持續驗證</h3><p>Figma 能定義預期，但正式產品的文字、狀態與互動仍需要在瀏覽器中確認。</p></article>
+          <article><span>04</span><h3>測試經驗沒有被保存</h3><p>若沒有 Test Case 與問題筆記，同樣的定位、登入或元件問題會重複處理。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="decision">
+      <div class="case-container">
+        <p class="case-eyebrow">02 · My Decision</p>
+        <h2>先建立可維護、低風險的唯讀測試，再逐步擴充資料異動流程。</h2>
+        <div class="decision-list">
+          <article><b>01</b><div><h3>零散操作 vs. 正式 Test Case</h3><p><strong>判斷：</strong>只有自動操作腳本仍難以確認範圍與預期結果。</p></div><aside><small>DECISION</small><p>以 TC-001—022 記錄功能、步驟、預期、結果與維護備註。</p></aside></article>
+          <article><b>02</b><div><h3>直接寫 Locator vs. Page Object Model</h3><p><strong>判斷：</strong>若每個測試都重寫元素定位，介面一改就要大量同步修改。</p></div><aside><small>DECISION</small><p>把頁面操作集中在 Page Object，Test 保留清楚的驗證意圖。</p></aside></article>
+          <article><b>03</b><div><h3>完整 CRUD vs. 唯讀驗證優先</h3><p><strong>判斷：</strong>共用測試站尚未準備專用資料，新增或刪除可能影響其他人。</p></div><aside><small>DECISION</small><p>先驗證顯示、導覽、Dialog 與選單，不送出資料異動。</p></aside></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section section-dark" id="system">
+      <div class="case-container">
+        <p class="case-eyebrow">03 · Test System</p>
+        <h2>把操作、頁面與文件拆開，讓測試可以讀、可以改，也可以延伸。</h2>
+        <p class="case-lead">測試不是一次性的錄製結果。我採用 Page Object Model，將測試意圖、頁面操作與共用環境分開管理。</p>
+
+        <div class="architecture row row-cols-1 row-cols-md-2 row-cols-xl-4 g-3">
+          <div class="col"><article><small>01 / INTENT</small><i class="fa-regular fa-file-code"></i><h3>Test Case</h3><p>描述要驗證什麼與預期結果。</p></article></div>
+          <div class="col"><article><small>02 / ACTION</small><i class="fa-solid fa-vial"></i><h3>Page Object</h3><p>集中管理頁面元素與操作。</p></article></div>
+          <div class="col"><article><small>03 / BROWSER</small><i class="fa-solid fa-play"></i><h3>Playwright</h3><p>模擬使用者操作 Chromium。</p></article></div>
+          <div class="col"><article><small>04 / RESULT</small><i class="fa-regular fa-circle-check"></i><h3>Assertion</h3><p>比對實際狀態與預期結果。</p></article></div>
+        </div>
+
+        <div class="row g-4 code-layout">
+          <div class="col-lg-7">
+            <div class="code-window">
+              <div class="code-title"><span><i></i><i></i><i></i></span><b>test_platform_manager.py</b></div>
+              <pre><code><span class="code-pink">def</span> <span class="code-yellow">test_interface_language_can_be_switched</span>(page):
+    platform = <span class="code-blue">PlatformManagerPage</span>(page)
+
+    platform.goto()
+    platform.switch_language(
+        current_language=<span class="code-green">"繁體中文"</span>,
+        target_language=<span class="code-green">"English"</span>,
+    )
+    platform.expect_navigation_label(
+        <span class="code-green">"User Management"</span>
+    )</code></pre>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="principles h-100">
+              <small>LOCATOR PRINCIPLES</small>
+              <h3>優先使用接近使用者理解方式的元素特徵。</h3>
+              <ul><li><i class="fa-solid fa-check"></i> role 與 accessible name</li><li><i class="fa-solid fa-check"></i> label、heading、placeholder</li><li><i class="fa-solid fa-check"></i> 限定容器，避免同名元素衝突</li><li><i class="fa-solid fa-xmark"></i> 過長且依賴版面的 CSS selector</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section section-white" id="evidence">
+      <div class="case-container">
+        <p class="case-eyebrow">04 · Test Evidence</p>
+        <h2>從 9 項主要導覽開始，逐步擴充到頁面內容與互動狀態。</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 suite-grid">
+          <div class="col"><article><div><small>TC-001—003</small><span><i class="fa-solid fa-circle-check"></i> Pass</span></div><h3>網站連線與平台入口</h3><p>3 tests</p></article></div>
+          <div class="col"><article><div><small>TC-004—011</small><span><i class="fa-solid fa-circle-check"></i> Pass</span></div><h3>9 項側邊導覽</h3><p>8 tests</p></article></div>
+          <div class="col"><article><div><small>TC-012—015</small><span><i class="fa-solid fa-circle-check"></i> Pass</span></div><h3>總覽與區塊收合</h3><p>4 tests</p></article></div>
+          <div class="col"><article><div><small>TC-016</small><span><i class="fa-solid fa-circle-check"></i> Pass</span></div><h3>繁中／英文切換</h3><p>1 test</p></article></div>
+          <div class="col"><article><div><small>TC-017—019</small><span><i class="fa-solid fa-circle-check"></i> Pass</span></div><h3>使用者管理唯讀流程</h3><p>3 tests</p></article></div>
+          <div class="col"><article><div><small>TC-020—022</small><span><i class="fa-solid fa-circle-check"></i> Pass</span></div><h3>群組管理唯讀流程</h3><p>3 tests</p></article></div>
+        </div>
+
+        <div class="evidence-panel row g-5 align-items-center">
+          <div class="col-lg-5 evidence-copy">
+            <small>ACTUAL DOCUMENT · TEST_CASES.MD</small>
+            <h3>測試範圍、預期結果與維護狀態同步文件化。</h3>
+            <p>每個案例都有固定編號、功能範圍、測試項目、預期結果與備註。文件不只記錄「有跑過」，也說明哪些操作刻意不執行，以及原因。</p>
+            <div class="doc-note"><i class="fa-regular fa-file-code"></i><span><b>PLAYWRIGHT_NOTES.md</b>另外保存 Locator、登入狀態與錄製問題，作為下一個專案可重用的基礎。</span></div>
+          </div>
+          <div class="col-lg-7">
+            <div class="doc-window">
+              <div class="doc-toolbar"><span>TEST_CASES.md</span><small>2026 / 08 / 28</small></div>
+              <div class="doc-row doc-row--head"><b>ID</b><b>Test</b><b>Result</b></div>
+              <div class="doc-row"><span>TC-016</span><strong>繁中／英文切換</strong><em>Pass</em></div>
+              <div class="doc-row"><span>TC-018</span><strong>新增使用者 Dialog</strong><em>Pass</em></div>
+              <div class="doc-row"><span>TC-021</span><strong>新增群組頁面</strong><em>Pass</em></div>
+              <div class="doc-row"><span>TC-022</span><strong>群組功能選單</strong><em>Pass</em></div>
+              <div class="doc-result"><i class="fa-solid fa-circle-check"></i><div><b>22 passed</b><span>in 21.84 seconds</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="outcome">
+      <div class="case-container">
+        <p class="case-eyebrow">05 · Outcome</p>
+        <h2>先建立一套可以反覆執行的基礎，讓每次改版都有一致的確認範圍。</h2>
+        <p class="case-lead">以下為 2026/08/28 的階段成果，測試數量會隨後續管理頁與測試資料持續更新。</p>
+        <div class="row row-cols-1 row-cols-md-2 g-0 outcomes">
+          <div class="col"><article><strong>22</strong><h3>測試案例</h3><p>涵蓋連線、導覽、總覽、語言與兩項後台管理流程。</p></article></div>
+          <div class="col"><article><strong>22</strong><h3>全部通過</h3><p>最近一次完整執行沒有失敗或略過項目。</p></article></div>
+          <div class="col"><article><strong>21.84s</strong><h3>完整回歸時間</h3><p>可在每次產品修改後快速重新確認主要操作。</p></article></div>
+          <div class="col"><article><strong>0</strong><h3>資料異動</h3><p>現階段採唯讀策略，避免測試影響共用環境資料。</p></article></div>
+        </div>
+        <div class="impact-line"><span>Before</span><p>依照記憶逐頁操作與檢查</p><i class="fa-solid fa-arrow-right"></i><span>Now</span><p>固定 Test Case＋一行指令執行完整回歸</p></div>
+      </div>
+    </section>
+
+    <section class="case-section section-dark" id="reflection">
+      <div class="case-container">
+        <div class="row g-5 reflection-grid">
+          <div class="col-lg-5"><p class="case-eyebrow">06 · Reflection</p><h2>UI Automation 不是取代人的判斷，而是把重複確認交給工具。</h2></div>
+          <div class="col-lg-7 reflection-copy">
+            <p>這次實作讓我更清楚地把「設計預期」寫成可被驗證的條件。Page Object 與測試文件也讓經驗不只存在個人操作裡，而是能被維護與延伸。</p>
+            <p>目前仍以唯讀測試為主，適合確認頁面與互動是否正常；真正涉及新增、修改與刪除的流程，還需要專用測試資料與更清楚的環境隔離。</p>
+            <div class="next-list">
+              <article><span>1</span><div><h3>擴充管理頁唯讀測試</h3><p>模型、AI 應用、API 端點、金鑰與系統日誌。</p></div></article>
+              <article><span>2</span><div><h3>準備可控制的測試資料</h3><p>再加入新增、修改、停用與刪除等 CRUD 流程。</p></div></article>
+              <article><span>3</span><div><h3>整理成可重用 Starter</h3><p>保留 POM、登入、文件與執行規範，移除 AI Hub 專案內容。</p></div></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-closing">
+      <div class="case-container d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-5">
+        <div><p class="case-eyebrow">Case 05 · UI Automation</p><h2>Product Designer × Front-end Collaboration × QA Automation</h2><p>從介面設計延伸到產品實作與品質驗證。</p></div>
+        <a href="../index.html#case-studies">返回案例列表 <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="case-container d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-4">
+      <div><strong>Eden Design Lab</strong><span>Product Designer</span></div>
+      <p>Designed and developed by Eden.<br>© 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="回到頁面頂端"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="js/case-study.js?v=20260828-1"></script> -->
+     <script src="../js/page-transitions.js?v=20260715-1"></script>
+    <script src="/js/shared-layout.js?v=20260729-1"></script>
+</body>
+</html>

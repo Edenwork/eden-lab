@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="企業 AI 平台產品設計 Case Study，聚焦資訊架構、元件策略與設計開發協作。">
+  <title>Enterprise AI Platform Case Study — Eden Design Lab</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="../css/style.min.css?v=20260715-5" rel="stylesheet">
+  <link href="../css/case-study.css?v=20260831-1" rel="stylesheet">
+</head>
+<body class="eden-home eden-case-study">
+<div aria-hidden="true" class="eden-intro" id="edenIntro"><div class="eden-intro__mark">Eden<span>.</span></div><p>PRODUCT SYSTEM / 2026</p><div class="eden-intro__track"><i></i></div></div>
+  <div class="case-progress" id="caseProgress" aria-hidden="true"></div>
+
+  <header class="header eden-site-header">
+    <div class="container">
+      <div class="eden-site-header__inner">
+        <a aria-label="回到首頁" class="eden-site-header__brand" href="../index.html#about">Eden.</a>
+        <button aria-controls="edenPrimaryNav" aria-expanded="false" aria-label="開啟導覽選單" class="eden-site-header__toggle" onclick="toggleCaseMenu(this)" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="主要導覽" class="eden-site-nav" id="edenPrimaryNav">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#portfolio">Portfolio</a>
+          <a class="is-active" href="../index.html#case-studies">Case Studies</a>
+          <a href="../index.html#blog">Blog</a>
+          <a class="eden-site-nav__cta" href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="case-shell">
+    <aside class="case-toc" aria-label="頁內目錄">
+      <small>案例目錄</small>
+      <a class="is-active" href="#overview" aria-current="location">01 背景與問題</a>
+      <a href="#role">02 角色與限制</a>
+      <a href="#decisions">03 關鍵決策</a>
+      <a href="#process">04 設計證據</a>
+      <a href="#system">05 系統與協作</a>
+      <a href="#outcome">06 成果</a>
+      <a href="#reflection">07 反思</a>
+    </aside>
+
+    <section class="case-hero">
+      <div class="case-container">
+        <span class="case-hero__label">Enterprise AI · Product Design · Design System</span>
+        <h1 class="case-title">將企業 AI 能力，<br>轉化為容易理解、操作並持續擴充的平台體驗。</h1>
+
+        <div class="case-hero__summary">
+          <p class="case-lead">這是一項企業 AI 平台產品設計專案。團隊需要將基礎設施、模型能力與多種 AI 應用，整理成清楚、一致且能持續擴充的產品入口。</p>
+          <p class="case-hero__aside"><strong>My contribution</strong>我主導平台視覺方向、資訊版型與 Design System，並透過互動原型、瀏覽器原型與開發協作，讓設計決策能進入實際產品。</p>
+        </div>
+
+        <div class="case-meta" aria-label="專案摘要">
+          <div class="case-meta__item"><small>Role</small><strong>Product Designer</strong></div>
+          <div class="case-meta__item"><small>Product</small><strong>Enterprise AI Platform</strong></div>
+          <div class="case-meta__item"><small>Scope</small><strong>UX · UI · Design System</strong></div>
+          <div class="case-meta__item"><small>Collaboration</small><strong>PM · RD · AI Teams</strong></div>
+          <div class="case-meta__item"><small>Status</small><strong>完成平台基礎並持續迭代</strong></div>
+        </div>
+
+        <div class="case-hero__visual" aria-label="企業 AI 平台公開重製示意畫面">
+          <div class="mock-app">
+            <aside class="mock-sidebar">
+              <div class="mock-logo">AI Platform</div>
+              <div class="mock-nav"><span>Overview</span><span>Workspace</span><span>Solutions</span><span>Resources</span><span>Settings</span></div>
+            </aside>
+            <div class="mock-main">
+              <div class="mock-top"><h2>Enterprise AI workspace</h2><div class="mock-search"></div></div>
+              <div class="mock-feature">
+                <div class="mock-panel"><small>PLATFORM EXPERIENCE</small><strong>Turn complex technology into clear product experiences.</strong></div>
+                <div class="mock-panel mock-panel--accent"><small>SYSTEM FOUNDATION</small><strong>Ready to scale</strong></div>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-card"><i></i><b>AI Workspace</b><span>Shared entry point</span></div>
+                <div class="mock-card"><i></i><b>Reusable Patterns</b><span>Consistent states</span></div>
+                <div class="mock-card"><i></i><b>Product Modules</b><span>Flexible expansion</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="case-nda">Public reconstruction — 本畫面由公開版內容重新製作，不代表實際產品介面。</p>
+        </div>
+        <div class="case-disclosure" role="note">
+          <strong>公開說明</strong>
+          <p>本案例受保密協議限制，專案名稱、產品介面、功能細節與商業資訊均已省略或重新製作。本頁聚焦於我的角色、設計方法與可轉移的產品設計能力，不代表實際產品畫面。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--white" id="overview">
+      <div class="case-container case-layout">
+        <div class="case-content">
+          <p class="case-eyebrow">01 · Context &amp; Challenge</p>
+          <h2 class="case-heading">從抽象技術能力，轉向企業能理解與使用的產品體驗。</h2>
+          <div class="case-copy" style="margin-top:38px">
+            <p>企業 AI 解決方案通常從基礎設施與模型能力出發，但技術規格本身很難讓非技術使用者理解：平台可以支援哪些工作、該從哪裡開始，以及不同能力之間有什麼關係。</p>
+            <p>團隊因此需要一個一致的產品入口，將分散的 AI 能力整理成可探索、可操作的平台體驗，同時保留未來增加產品模組與使用情境的彈性。</p>
+          </div>
+          <blockquote class="case-quote">如何將複雜的 AI 技術，轉化為企業使用者能理解、能操作，也能持續擴充的產品？</blockquote>
+
+          <div class="case-users">
+            <article class="case-user">
+              <span class="case-user__number">01</span>
+              <h3>內部產品與協作團隊</h3>
+              <p>產品、設計、開發與相關團隊需要用同一套結構討論需求、組合功能並維持體驗一致。</p>
+            </article>
+            <article class="case-user">
+              <span class="case-user__number">02</span>
+              <h3>企業使用者</h3>
+              <p>使用者需要透過統一入口理解平台能力、找到適合的功能，並在不同 AI 任務之間維持一致的操作預期。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-container case-subsection">
+        <p class="case-eyebrow">Problem Framework</p>
+        <h2 class="case-heading">問題不只是缺少介面，而是缺少一套將 AI 能力產品化的平台基礎。</h2>
+        <p class="case-lead">平台需要同時處理資訊理解、體驗一致、未來擴充，以及設計與開發實作之間的落差。</p>
+
+        <div class="case-problems">
+          <article class="case-problem"><span>01</span><h3>技術能力難以被快速理解</h3><p>基礎設施、模型與應用位於不同層級，需要轉譯成清楚的產品架構與使用情境。</p></article>
+          <article class="case-problem"><span>02</span><h3>不同 AI 功能缺乏一致體驗</h3><p>當功能由不同團隊發展時，資訊層級、元件狀態與操作模式容易產生差異。</p></article>
+          <article class="case-problem"><span>03</span><h3>缺少可重複使用的設計基礎</h3><p>每次新增功能都從零開始，增加溝通與製作成本，也難以維持品質。</p></article>
+          <article class="case-problem"><span>04</span><h3>設計與實作之間存在落差</h3><p>版面、Responsive 與元件狀態在轉換後容易改變，需要更清楚的交付與檢查方式。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="role">
+      <div class="case-narrow">
+        <p class="case-eyebrow">02 · My Role &amp; Constraints</p>
+        <h2 class="case-heading">我的工作不只停留在介面設計，而是串連產品呈現、系統規範與實際開發。</h2>
+        <p class="case-lead">我主導產品視覺、頁面架構與設計系統，並和 PM、RD 討論不同功能適合的資訊與互動方式；產品優先順序與技術方案則由團隊共同確認。</p>
+
+        <div class="case-role">
+          <article class="case-role__box case-role__box--primary">
+            <h3>我主導的範圍</h3>
+            <ul class="case-list">
+              <li>產品視覺方向與介面風格</li>
+              <li>頁面版型與資訊層級</li>
+              <li>Design System 與元件規範</li>
+              <li>Figma 互動 Prototype</li>
+              <li>HTML/CSS Prototype 與樣式檢查</li>
+            </ul>
+          </article>
+          <article class="case-role__box">
+            <h3>共同參與與非負責範圍</h3>
+            <ul class="case-list">
+              <li>與 PM 討論功能與元件呈現</li>
+              <li>與 RD 對齊產品實作方式</li>
+              <li>需求與功能優先順序由 PM 決定</li>
+              <li>技術架構與商業策略不在我的負責範圍</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="case-constraints">
+          <div>
+            <p class="case-eyebrow">Project Constraints</p>
+            <h3>讓限制成為判斷設計成果的必要背景。</h3>
+          </div>
+          <ul class="case-list">
+            <li>NDA 限制可公開的產品畫面與商業資訊</li>
+            <li>第一階段尚未建立正式 User Research 與 Design QA</li>
+            <li>缺少可直接歸因於設計的產品與銷售數據</li>
+            <li>設計元件與前端元件尚未建立完整對照與版本治理</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--white" id="decisions">
+      <div class="case-container">
+        <p class="case-eyebrow">03 · Key Design Decisions</p>
+        <h2 class="case-heading">每個決策都回應一項限制，也代表一次取捨。</h2>
+
+        <div class="case-decisions">
+          <article class="case-decision">
+            <div class="case-decision__num">01</div>
+            <div><h3>單次功能頁 vs. 可擴充平台</h3><p><strong>情境與取捨：</strong>單次功能頁能更快完成，但每增加一項 AI 能力都需要重新設計；平台架構的前期成本較高，卻能支援長期擴充。</p></div>
+            <div class="case-decision__result"><small>Decision &amp; impact</small><p>選擇平台架構，將導覽、應用卡片、資訊區塊與操作模組拆成可重複組合的基礎。</p></div>
+          </article>
+          <article class="case-decision">
+            <div class="case-decision__num">02</div>
+            <div><h3>完全統一介面 vs. 保留應用彈性</h3><p><strong>情境與取捨：</strong>完全統一能降低維護成本，卻可能限制不同 AI 任務；完全客製則會再次造成體驗分散與重複製作。</p></div>
+            <div class="case-decision__result"><small>Decision &amp; impact</small><p>統一導覽、視覺與共用狀態，個別 AI 功能則依任務需求組合內容與互動模組。</p></div>
+          </article>
+          <article class="case-decision">
+            <div class="case-decision__num">03</div>
+            <div><h3>靜態 Figma 交付 vs. 瀏覽器原型協作</h3><p><strong>情境與取捨：</strong>只交付 Figma 較省時間，但 Responsive、互動與樣式細節容易在產品實作後產生落差。</p></div>
+            <div class="case-decision__result"><small>Decision &amp; impact</small><p>增加 HTML Prototype 與 Git Review，讓 PM、RD 在開發前後都能確認實際瀏覽器行為。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="process">
+      <div class="case-container">
+        <p class="case-eyebrow">04 · Design Evidence</p>
+        <h2 class="case-heading">以資訊架構、元件策略與原型協作，逐步收斂平台體驗。</h2>
+        <div class="case-process">
+          <article class="case-step"><small>01 / DEFINE</small><h3>釐清</h3><p>整理技術能力、產品模組與平台的關係，和 PM 確認需求與呈現目標。</p></article>
+          <article class="case-step"><small>02 / STRUCTURE</small><h3>架構</h3><p>規劃資訊層級、頁面版型，以及功能與共用元件的關係。</p></article>
+          <article class="case-step"><small>03 / EXPLORE</small><h3>提案</h3><p>透過 Wireframe、視覺方案與 Figma Prototype 比較不同方向。</p></article>
+          <article class="case-step"><small>04 / DELIVER</small><h3>實作</h3><p>製作瀏覽器原型、進入開發協作，並持續檢查與修正實作差異。</p></article>
+        </div>
+
+        <div class="case-evidence">
+          <div class="case-evidence__head"><div><small>CAPABILITY 01 · INFORMATION ARCHITECTURE</small><h3>建立能被理解的平台層級</h3></div><p>公開版以重製示意呈現思考方式，不使用實際產品結構、名稱或畫面。</p></div>
+          <figure class="case-evidence__figure">
+            <img src="../images/new/post-img-4.jpg" alt="資訊架構與設計探索的公開重製示意圖">
+            <figcaption>Reconstructed demo — 以泛化內容說明資訊整理與方案收斂，不代表實際產品畫面。</figcaption>
+          </figure>
+          <div class="case-evidence__notes">
+            <div><small>PROBLEM</small><p>技術、產品與任務資訊混在同一層級，使用者難以建立清楚心智模型。</p></div>
+            <div><small>APPROACH</small><p>先區分平台入口、產品模組與任務內容，再決定導覽與內容優先順序。</p></div>
+            <div><small>TRANSFERABLE VALUE</small><p>以清楚架構降低理解成本，也為後續功能擴充預留穩定位置。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--dark" id="system">
+      <div class="case-container">
+        <p class="case-eyebrow">05 · Component Strategy</p>
+        <h2 class="case-heading">在一致性與任務彈性之間，建立可重複使用的元件策略。</h2>
+        <p class="case-lead">我將跨功能共用的結構與狀態整理成設計基礎；個別 AI 任務則保留適度彈性，避免一致性變成限制產品發展的框架。</p>
+        <div class="case-evidence">
+          <div class="case-evidence__head"><div><small>CAPABILITY 02 · COMPONENT STRATEGY</small><h3>從共用規則到可擴充的產品模組</h3></div><p>公開版只呈現系統化方法，不揭露實際元件、Design Tokens、功能狀態或內部規範。</p></div>
+          <figure class="case-evidence__figure">
+            <img src="../images/new/image8885.jpg" alt="元件策略與設計系統方法的公開重製示意圖">
+            <figcaption>Reconstructed demo — 泛化呈現系統化設計方法，不代表實際元件庫或規範。</figcaption>
+          </figure>
+          <div class="case-evidence__legend">
+            <div><small>01 / Foundation</small><h3>共同基礎</h3><p>建立一致的視覺語言與版面節奏。</p></div>
+            <div><small>02 / Shared Patterns</small><h3>共用模式</h3><p>整理跨產品模組可重複使用的結構。</p></div>
+            <div><small>03 / States</small><h3>狀態設計</h3><p>讓不同任務維持可預期的回饋邏輯。</p></div>
+            <div><small>04 / Flexibility</small><h3>擴充彈性</h3><p>保留個別情境所需的內容與互動差異。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--green" id="collaboration">
+      <div class="case-container">
+        <p class="case-eyebrow">Design to Development</p>
+        <h2 class="case-heading">讓設計不只停在 Figma，而是持續參與產品實作。</h2>
+        <p class="case-lead">設計方向確認後，我以瀏覽器原型補充 Responsive 與互動細節，並在開發過程中持續檢查實作，縮小設計稿與產品之間的差異。</p>
+
+        <div class="case-flow" aria-label="設計開發協作流程">
+          <div class="case-flow__item"><span class="case-flow__dot">01</span><b>Requirement</b><span>產品需求</span></div>
+          <div class="case-flow__item"><span class="case-flow__dot">02</span><b>UX / UI</b><span>體驗與介面</span></div>
+          <div class="case-flow__item"><span class="case-flow__dot">03</span><b>Prototype</b><span>互動確認</span></div>
+          <div class="case-flow__item"><span class="case-flow__dot">04</span><b>Browser Demo</b><span>行為驗證</span></div>
+          <div class="case-flow__item"><span class="case-flow__dot">05</span><b>Development</b><span>產品實作</span></div>
+          <div class="case-flow__item"><span class="case-flow__dot">06</span><b>Review</b><span>差異檢查</span></div>
+          <div class="case-flow__item"><span class="case-flow__dot">07</span><b>Iterate</b><span>持續調整</span></div>
+        </div>
+
+        <div class="case-evidence case-evidence--compact">
+          <div class="case-evidence__head"><div><small>CAPABILITY 03 · DESIGN TO DEVELOPMENT</small><h3>以原型與實作檢查縮小交付落差</h3></div><p>公開版呈現協作方法，不揭露程式碼、專案架構、內部流程或實際產品畫面。</p></div>
+          <figure class="case-evidence__figure">
+            <img src="../images/new/course-img-7.jpg" alt="設計與開發協作方法的公開重製示意圖">
+            <figcaption>Reconstructed demo — 泛化呈現 Prototype、Development 與 Review 的協作關係。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--white" id="outcome">
+      <div class="case-container">
+        <p class="case-eyebrow">06 · Outcome</p>
+        <h2 class="case-heading">成果不只是一組介面，而是一個能支援團隊協作與後續擴充的產品基礎。</h2>
+        <p class="case-lead">受 NDA 與量化資料限制，這裡不公開採用數字或商業成果，而以可確認的產品基礎、系統方法與團隊影響說明設計價值。</p>
+
+        <div class="case-outcomes">
+          <article class="case-outcome"><small>01 / PRODUCT FOUNDATION</small><h3>建立一致的平台體驗基礎</h3><p>將分散的技術與產品能力整理成可理解、可操作的共同入口。</p></article>
+          <article class="case-outcome"><small>02 / SCALABILITY</small><h3>支援後續 AI 功能持續加入</h3><p>透過可重複使用的結構與共用模式，降低新增功能時從零開始的成本。</p></article>
+          <article class="case-outcome"><small>03 / COLLABORATION</small><h3>改善設計與開發溝通</h3><p>以 Prototype、實作檢查與持續 Review，讓團隊更早對齊產品行為與品質。</p></article>
+          <article class="case-outcome"><small>04 / EXPERIENCE VALUE</small><h3>把複雜技術轉成可理解體驗</h3><p>以資訊架構與一致互動降低理解成本，讓技術能力能透過產品被使用者感知。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="reflection">
+      <div class="case-container case-reflection">
+        <div>
+          <p class="case-eyebrow">07 · Reflection</p>
+          <h2 class="case-heading">從建立平台基礎，走向可被驗證與共同維護的產品系統。</h2>
+        </div>
+        <div>
+          <div class="case-copy">
+            <p>第一階段的重點，是先建立清楚、一致且能支援擴充的平台基礎。互動原型、瀏覽器原型與實作協作，讓我能持續參與從設計決策到產品呈現的過程。</p>
+            <p>但現階段的決策仍較依賴內部提案與利害關係人回饋，缺少來自實際使用者的系統化驗證；設計與開發差異，也需要更成熟的共同規範與 Design QA 流程。</p>
+          </div>
+          <div class="case-next">
+            <article class="case-next__item"><span>1</span><div><h3>建立使用者驗證</h3><p>訪談業務與企業員工，觀察他們如何理解、尋找與使用 AI 功能。</p></div></article>
+            <article class="case-next__item"><span>2</span><div><h3>補上產品數據</h3><p>追蹤功能採用、任務完成、錯誤中斷與持續使用情況。</p></div></article>
+            <article class="case-next__item"><span>3</span><div><h3>完善系統治理</h3><p>建立設計元件、前端元件與版本變更之間的清楚對應。</p></div></article>
+            <article class="case-next__item"><span>4</span><div><h3>建立 Design QA</h3><p>讓設計品質由共同流程維持，而非依賴實作後個別修正。</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-footer" aria-labelledby="nextCaseTitle">
+      <div class="case-container case-footer__inner">
+        <div>
+          <p class="case-eyebrow">Next Case Study</p>
+          <h2 id="nextCaseTitle">AI 藥事 Agent｜醫療資訊與工作流程設計</h2>
+          <p class="case-footer__note">案例整理中，先回到首頁查看其他作品與設計文章。</p>
+        </div>
+        <a href="../index.html#case-studies">返回案例列表 <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer eden-site-footer" id="contact"><div class="container"><div class="eden-footer__main"><div class="eden-footer__brand"><a href="../index.html#about">Eden Design Lab</a><p>Product Designer</p></div><nav aria-label="頁尾導覽" class="eden-footer__nav"><a href="../index.html#about">About</a><a href="../index.html#portfolio">Portfolio</a><a href="../index.html#case-studies">Case Studies</a><a href="../index.html#blog">Blog</a><a href="../index.html#contact">Contact</a></nav><div class="eden-footer__links"><a href="mailto:s1u3n4@gmail.com">Email</a><a href="https://www.linkedin.com/in/eden-c-875745136/" rel="noopener noreferrer" target="_blank">LinkedIn</a><a class="eden-footer__resume" download href="../eden-product-designer-resume-2026.pdf">索取履歷 <span aria-hidden="true">↓</span></a></div></div><div class="eden-footer__bottom"><p>Designed and developed by Eden.</p><p>© 2026 All rights reserved.</p></div></div></footer>
+  <script src="../js/shared-layout.js?v=20260729-1"></script>
+
+  <button aria-label="回到頁面頂端" class="eden-back-to-top" id="edenBackToTop" type="button">
+    <i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="../js/case-study.js?v=20260831-1"></script>
+  <script src="../js/page-transitions.js?v=20260715-1"></script>
+</body>
+</html>
