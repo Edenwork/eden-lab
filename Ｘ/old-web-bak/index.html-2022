@@ -1,0 +1,1102 @@
+<!doctype html>
+<html class="no-js" lang="zh-Han">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Eden's UI/UX Design CV & Portfolio</title>
+    <meta name="description" content="Eden's Website UI UX Design Portfolio and CV Resume Curriculum Vitae 2022">
+    <meta name="keywords"
+        content="Resume, 作品集, 逗點人設計, Design Portfolio, professional, Website, Graphic Design, CV, UI, UX 設計">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/icon.png">
+
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/revoulation.css">
+    <link rel="stylesheet" href="css/plugins.css">
+
+    <!-- Style Css -->
+    <link rel="stylesheet" href="eden.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Hotjar Tracking Code for eden.7netic.com -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 2427911, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '490373008343367');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=490373008343367&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+
+<body class="template-color-1 template-font-2">
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <!-- <div id="page-preloader" class="page-loading clearfix">
+        <div class="page-load-inner">
+            <div class="preloader-wrap">
+                <div class="wrap-2">
+                    <div class=""> <img src="img/preloader.gif" alt="Preloader"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="wrapper">
+
+
+        <!-- Header -->
+        <header
+            class="br_header header-default header-transparent pt--15 light-logo--version haeder-fixed-width headroom--sticky header-mega-menu clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="header__wrapper mr--0">
+                            <!-- Header Left -->
+                            <div class="header-left flex-50">
+
+                                <div class="logo">
+                                    <a href="https://www.behance.net/7netic">
+                                        <!-- <i class="fab fa-behance"></i>-->
+                                        <img src="img/eden_logo_s.png" alt="Eden Img">
+                                    </a>
+                                </div>
+
+                                <h5 class="heading heading-h5 font-20 text-white pl--20"> Hello, I'm 陳Eden.</h5>
+
+                            </div>
+                            <!-- Mainmenu Wrap -->
+                            <div class="header-flex-right flex-50">
+                                <div class="mainmenu-wrapper have-not-flex d-none d-lg-block">
+                                    <nav class="page_nav">
+                                        <ul class="mainmenu">
+
+                                            <li class="lavel-1 slide--megamenu">
+                                                <a href="#cv"><span>CV</span></a>
+                                            </li>
+                                            <li class="lavel-1 slide--megamenu">
+                                                <a href="#experience"><span>Experience</span></a>
+                                            </li>
+                                            <li class="lavel-1 slide--megamenu">
+                                                <a href="#skill"><span>Skill</span></a>
+                                            </li>
+                                            <li class="lavel-1 slide--megamenu">
+                                                <a href="#portfolio"><span>Portfolio</span></a>
+                                            </li>
+                                            <li class="lavel-1 slide--megamenu">
+                                                <a id="ga-7netic_resume-Download_Portfolio-btn"
+                                                    href="https://eden.7netic.com/eden_resume_2022.pdf" target="_blank"
+                                                    alt="eden_resume_2022">
+                                                    <span>Resume</span>
+                                                </a>
+                                            </li>
+                                            <li class="lavel-1 slide--megamenu">
+                                                <a href="#contact"><span>Contact</span></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- Header Right -->
+                                <div class="header-right have-not-flex pl--35 pl_md--5 pr_md--20 pl_sm--5 pr_sm--20">
+
+                                    <!-- Start Hamberger -->
+                                    <div
+                                        class="manu-hamber popup-mobile-click d-block d-lg-none light-version d-block d-xl-none">
+                                        <div>
+                                            <i></i>
+                                        </div>
+                                    </div>
+                                    <!-- End Hamberger -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+
+
+
+
+        <!-- Start Popup Menu -->
+        <div class="popup-mobile-manu popup-mobile-visiable">
+            <div class="inner">
+                <div class="mobileheader">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="img/eden_logo-140.png" alt="Eden">
+                        </a>
+                    </div>
+                    <a class="mobile-close" href="#"></a>
+                </div>
+                <div class="menu-content">
+                    <ul class="menulist object-custom-menu">
+                        <li><a href="#cv"><span>CV</span></a></li>
+                        <li><a href="#experience"><span>Experience</span></a></li>
+                        <li><a href="#skill"><span>Skill</span></a></li>
+                        <li><a href="#portfolio"><span>Portfolio</span></a></li>
+                        <li><a href="#contact"><span>Contact</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Popup Menu -->
+
+
+
+
+
+
+        <!-- START REVOLUTION SLIDER -->
+        <div class="slider-revoluation">
+            <div id="rev_slider_6_1" class="rev_slider rev_slider_6_1 fullscreenbanner" style="display:none;"
+                data-version="5.4.7">
+                <ul>
+
+                    <!-- SLIDE  -->
+                    <li data-index="rs-17" data-transition="slideoverdown" data-slotamount="default"
+                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut"
+                        data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0"
+                        data-saveperformance="off" data-title="Responsive" data-param1="" data-param2="" data-param3=""
+                        data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                        data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="img/revoulation/dummy.png" alt="" data-lazyload="img/landing_img.jpg"
+                            data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                            data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+
+                        <!-- LAYER NR. 16 -->
+                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-3" id="slide-17-layer-14"
+                            data-x="['right','right','right','right']" data-hoffset="['60','60','59','59']"
+                            data-y="['middle','middle','middle','middle']" data-voffset="['-200','-200','-201','-201']"
+                            data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                            data-basealign="slide" data-responsive_offset="on"
+                            data-frames='[{"delay":1310,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.8;sY:0.8;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                            style="z-index: 6;">
+                            <div class="rs-looped rs-wave" data-speed="4" data-angle="0" data-radius="10px"
+                                data-origin="50% 50%"><img src="img/revoulation/dummy.png" alt=""
+                                    data-ww="['150px','150px','150px','150px']"
+                                    data-hh="['152px','152px','152px','152px']"
+                                    data-lazyload="img/revoulation/slider-agency-website-slide-02-image-01.png"
+                                    data-no-retina>
+                            </div>
+                        </div>
+
+
+                        <!-- LAYER NR. 19 -->
+                        <div class="tp-caption   rs-parallaxlevel-4" id="slide-17-layer-9"
+                            data-x="['center','center','center','center']" data-hoffset="['-381','-158','-92','-57']"
+                            data-y="['middle','middle','bottom','bottom']" data-voffset="['60','60','15','14']"
+                            data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                            data-responsive_offset="off" data-responsive="off"
+                            data-frames='[{"delay":1250,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":3000,"frame":"999","to":"opacity:0;","ease":"Power4.easeIn"}]'
+                            data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                            style="z-index: 9;"><img src="img/revoulation/dummy.png" alt=""
+                                data-ww="['240px','260px','220px','120px']" data-hh="['448px','450px','381px','208px']"
+                                data-lazyload="img/revoulation/slider-agency-website-slide-02-iphone-frame.png"
+                                data-no-retina> </div>
+
+                        <!-- LAYER NR. 20 -->
+                        <div class="tp-caption   tp-resizeme" id="slide-17-layer-11"
+                            data-x="['center','center','center','center']" data-hoffset="['-570','-570','-570','-570']"
+                            data-y="['middle','middle','middle','middle']" data-voffset="['55','55','55','55']"
+                            data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                            data-basealign="slide" data-responsive_offset="on"
+                            data-frames='[{"delay":1250,"speed":1500,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                            style="z-index: 10;"><img src="img/revoulation/dummy.png" alt=""
+                                data-ww="['35px','35px','35px','35px']" data-hh="['333px','333px','333px','333px']"
+                                data-lazyload="img/revoulation/slider-agency-website-slide-02-pen.png" data-no-retina>
+                        </div>
+
+                        <!-- LAYER NR. 21 -->
+                        <div class="tp-caption   rs-parallaxlevel-4" id="slide-17-layer-10"
+                            data-x="['center','center','center','center']" data-hoffset="['-392','-157','-92','-57']"
+                            data-y="['middle','middle','bottom','bottom']" data-voffset="['45','60','85','51']"
+                            data-width="none" data-height="none" data-whitespace="nowrap" data-type="image"
+                            data-responsive_offset="off" data-responsive="off"
+                            data-frames='[{"delay":1750,"speed":1000,"frame":"0","from":"z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":3000,"frame":"999","to":"opacity:0;","ease":"Power4.easeIn"}]'
+                            data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                            style="z-index: 11;"><img src="img/revoulation/dummy.png" alt=""
+                                data-ww="['186px','170px','144px','78px']" data-hh="['395px','286px','242px','131px']"
+                                data-lazyload="img/landing_phone.jpg" data-no-retina> </div>
+
+                        <!-- LAYER NR. 22 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-3"
+                            id="slide-17-layer-3" data-x="['right','right','center','center']"
+                            data-hoffset="['19','0','-25','-25']" data-y="['middle','middle','top','top']"
+                            data-voffset="['28','-2','130','120']" data-width="['350','350','350','330']"
+                            data-height="['350','350','350','330']" data-whitespace="nowrap" data-type="shape"
+                            data-responsive_offset="on"
+                            data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":3000,"frame":"999","to":"opacity:0;","ease":"Power4.easeIn"}]'
+                            data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                            style="z-index: 12;background-color:rgba(58, 67, 142, 0.45);">
+                        </div>
+
+                        <!-- LAYER NR. 23 -->
+                        <div class="tp-caption Agency-SmallTitle   tp-resizeme rs-parallaxlevel-3 text-white"
+                            id="slide-17-layer-4" data-x="['right','right','center','center']"
+                            data-hoffset="['40','20','-25','-25']" data-y="['middle','middle','top','top']"
+                            data-voffset="['-60','-98','164','154']" data-width="295" data-height="none"
+                            data-whitespace="normal" data-type="text" data-responsive_offset="on"
+                            data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":3000,"frame":"999","to":"opacity:0;","ease":"Power4.easeIn"}]'
+                            data-textAlign="['left','left','left','left']" data-paddingtop="[150,150,0,0]"
+                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                            style="z-index: 13; min-width: 295px; max-width: 295px; white-space: normal; letter-spacing: 3px;">
+                            <h5 class="text-white">Design Experience</h5>
+                            UI Design<br>
+                            <span class="fa fa-arrow-right" style="font-size: 12px; color: #F8B920; margin-left: 8px;">
+                            </span> 4 years <br><br>
+
+                            UX Design<br>
+                            <span class="fa fa-arrow-right" style="font-size: 12px; color: #F8B920; margin-left: 8px;">
+                            </span> 2 years <br><br>
+
+                            Graphic Design<br>
+                            <span class="fa fa-arrow-right" style="font-size: 12px; color: #F8B920; margin-left: 8px;">
+                            </span> 8 years <br>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+                <div style="" class="tp-static-layers">
+
+                    <!-- LAYER NR. 39 -->
+                    <a class="tp-caption   tp-resizeme tp-static-layer" href="#" target="_self" id="slider-6-layer-5"
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                        data-y="['bottom','bottom','bottom','bottom']" data-voffset="['59','54','54','54']"
+                        data-width="none" data-height="none" data-whitespace="nowrap"
+                        data-visibility="['on','on','off','off']" data-type="image" data-actions=''
+                        data-basealign="slide" data-responsive_offset="on" data-startslide="0" data-endslide="2"
+                        data-frames='[{"delay":2000,"speed":500,"frame":"0","from":"y:-50px;sX:0.2;sY:0.2;opacity:0;","to":"o:1;","ease":"Back.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+                        data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 43;cursor:pointer;text-decoration: none;">
+                        <div class="rs-looped rs-wave" data-speed="2" data-angle="0" data-radius="1px"
+                            data-origin="50% 50%"><img src="img/revoulation/slider-agency-website-slide-arrow.png"
+                                alt="" data-ww="['79px','79px','79px','79px']" data-hh="['74px','74px','74px','74px']"
+                                data-lazyload="img/revoulation/slider-agency-website-slide-arrow.png" data-no-retina>
+                        </div>
+                    </a>
+
+                    <!-- LAYER NR. 40 Contact Me -->
+                    <a class="tp-caption Agency-ArrowTooltip tp-resizeme tp-static-layer contact-us"
+                        href="mailto:s1u3n4@gmail.com" target="_blank" id="slider-6-layer-6"
+                        data-x="['center','center','center','center']" data-hoffset="['2','2','2','2']"
+                        data-y="['bottom','bottom','bottom','bottom']" data-voffset="['35','30','30','30']"
+                        data-width="none" data-height="none" data-whitespace="nowrap"
+                        data-visibility="['on','on','off','off']" data-type="text" data-actions=''
+                        data-basealign="slide" data-responsive_offset="on" data-startslide="0" data-endslide="2"
+                        data-frames='[{"delay":2250,"speed":1000,"frame":"0","from":"z:0;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Back.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+                        data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 44; white-space: nowrap;text-decoration: none;">
+                        <div class="rs-looped rs-wave" data-speed="1.5" data-angle="0" data-radius="1px"
+                            data-origin="50% 50%">Contact Me
+                        </div>
+                    </a>
+
+                    <!-- LAYER NR. 41 -->
+                    <div class="tp-caption   tp-resizeme tp-static-layer" id="slider-6-layer-16"
+                        data-x="['left','left','left','left']" data-hoffset="['70','70','70','70']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="30"
+                        data-height="none" data-whitespace="normal" data-visibility="['on','on','off','off']"
+                        data-type="text" data-basealign="slide" data-responsive_offset="on" data-startslide="0"
+                        data-endslide="2"
+                        data-frames='[{"delay":2000,"split":"chars","splitdelay":0.05,"speed":2000,"split_direction":"forward","frame":"0","from":"y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 45; min-width: 30px; max-width: 30px; white-space: normal; font-size: 24px; line-height: 70px; font-weight: 800; color: #ffffff;text-transform:uppercase;">
+                        E D E N </div>
+
+                    <!-- LAYER NR. 42 -2015 -->
+                    <div class="tp-caption    slide-status-numbers tp-static-layer" id="slider-6-layer-18"
+                        data-x="['right','right','right','right']" data-hoffset="['60','60','60','60']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['-110','-110','-110','-110']"
+                        data-width="37" data-height="none" data-whitespace="normal"
+                        data-visibility="['on','on','off','off']" data-type="text" data-basealign="slide"
+                        data-responsive_offset="off" data-responsive="off" data-startslide="0" data-endslide="2"
+                        data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 46; min-width: 37px; max-width: 37px; white-space: normal; font-size: 36px; line-height: 51px; font-weight: 700; color: #ffffff;font-family:Poppins;">
+                        2015
+                    </div>
+
+                    <!-- LAYER NR. 43 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper  tp-static-layer" id="slider-6-layer-19"
+                        data-x="['right','right','right','right']" data-hoffset="['74','74','74','74']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="3"
+                        data-height="150" data-whitespace="normal" data-visibility="['on','on','off','off']"
+                        data-type="shape" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                        data-startslide="0" data-endslide="2"
+                        data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 47;background-color:rgb(255,255,255);">
+                    </div>
+
+                    <!-- LAYER NR. 44 -2022-->
+                    <div class="tp-caption   tp-static-layer" id="slider-6-layer-20"
+                        data-x="['right','right','right','right']" data-hoffset="['62','62','62','62']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['110','110','110','110']"
+                        data-width="none" data-height="none" data-whitespace="nowrap"
+                        data-visibility="['on','on','off','off']" data-type="text" data-basealign="slide"
+                        data-responsive_offset="off" data-responsive="off" data-startslide="0" data-endslide="2"
+                        data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 48; white-space: nowrap; font-size: 20px; line-height: 28px; font-weight: 700; color: #ffffff;font-family:Poppins;">
+                        2022
+                    </div>
+                </div>
+                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+            </div>
+        </div>
+        <!-- End REVOLUTION SLIDER -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Page Conttent -->
+        <main class="page-content">
+
+
+            <!-- Start Service Area -->
+            <div class="bk-service-area section-ptb-xl bg_image--2" id="cv">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-12">
+                            <div class="section-title text-center wow move-up">
+                                <p id="eden_pic"><img src="img/eden.png" alt="Eden_CV"></p>
+                                <p class="pb--30">
+                                <ul class="social-icon icon-size-medium text-dark tooltip-layout move-up wow ptb--50">
+                                    <li class="linkedin">
+                                        <a href="https://www.linkedin.com/in/eden-c-875745136/"
+                                            class="link hint--bounce hint--top hint--theme" aria-label="Linkedin"
+                                            target="_blank">
+                                            <i class="fab fa-linkedin"></i></a>
+                                    </li>
+                                    <li class="behance">
+                                        <a href="https://www.behance.net/7netic"
+                                            class="link hint--bounce hint--top hint--theme" aria-label="Behance"
+                                            target="_blank">
+                                            <i class="fab fa-behance"></i></a>
+                                    </li>
+                                    <li class="dribbble">
+                                        <a href="https://dribbble.com/7netic"
+                                            class="link hint--bounce hint--top hint--theme" aria-label="Dribbble"
+                                            target="_blank">
+                                            <i class="fab fa-dribbble"></i></a>
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xl-7 col-lg-7 col-12 text-justify">
+                            <div class="section-title justify-content-centerwow move-up">
+
+                                您好，我叫Eden，目前已從事近五年的網頁設計經歷，能熟練使用 Sketch 和 Adobe XD 設計 UI 視覺與 Prototype，並快速套用框架
+                                (如BootStrap、AdminLTE) 製作出 RWD 響應式網頁，並使用 UI/UX 分析與設計團隊與後端工程師溝通完成可上線的網頁。因網頁設計經驗趨於成熟，也進一步進行使用者體驗 (UX)
+                                來規劃商業模式。
+                                </br></br>
+                                在專業技術方面，我具備獨立作業以及自行收集需求和解決問題的能力，遇到較大型的專案時，會使用心智圖軟體（Xmind）收斂設計靈感，進而規劃、設計網站流程，並繪製
+                                Wireframe、Wireflow。在工作實務上，常獨力完成
+                                RWD 網站專案，工作內容包含 HTML、CSS 切版以及部分 jQuery 的效果套用，也了解 Angular.js 的架構，會修改CSS樣式並套用，並有手刻過 RWD
+                                網站的經驗。
+                                </br></br>
+                                因應網頁技術的更新速度，有效率且寬廣地學習並嘗試新技術，從中精進自我的能力。因期許自己更能得心應手地規劃網頁，利用下班的時間積極進修 Javascript、UX 與
+                                Vue.js
+                                課程，增進技能的效率與廣度。也考取相關專業證照，包含Google
+                                Analytics(GA)、3Ds Max、Illustrator、PhotoShop ACA、AutoCad等證照。
+                                </br></br>
+                                請參考</br>
+                                <a id="ga-7netic_resume-7nHomePage_link-btn" href="https://7netic.com/" class="eden-btn"
+                                    target="_blank">插畫風格網站</a>
+
+                                <a id="ga-7netic_resume-7nPortfolio_link-btn"
+                                    href="https://www.behance.net/gallery/92617165/Edens-Portfolio"
+                                    class="eden-btn" target="_blank">作品集</a>
+                                </br>
+                                <!-- 使用 Vue.js 製作的網頁 <a href="https://vue.7netic.com" class="text-dark" target="_blank">
+                                    https://vue.7netic.com</a></br> -->
+                                <div class="thumb mt--35">
+                                    <img src="img/wavy-icon.png" alt="">
+                                </div></br>
+                                Hello, I’m Eden, a web designer and illustrator based in Taipei, Taiwan. I'm working
+                                in
+                                a E-Commerce corporation now.
+                                </br></br>
+                                Exploring possibilities in design project is one of fields I’m interested in. For the
+                                past four years, I have refined my interpersonal skills working as a UI/UX Designer in
+                                Ximple Technology Corp., which is about analysis spatial big data and land survey
+                                system.
+                                </br></br>
+                                Being positive and optimistic is my personality. I never stop searching
+                                for new styles and new forms of self-expression to improve my skills. It's easy to me
+                                when using Illustrator、PhotoShop、3Ds Max、AutoCad, and also Google Analytics, I have
+                                obtained these licenses!
+                                </br></br>
+                                I’m looking for a front-end designer or UI/UX designer that focuses on creative design.
+                                My long term goal is to be more involved in web, app and FinTech technology. If my
+                                experience and design philosophy are attractive to
+                                you, please feel free to contact me. Thank you for your consideration and looking
+                                forward to hearing from you soon.
+                                </br></br>
+                                Here to see my portfolio website:</br>
+                                <div class="col-12">
+                                    <a id="ga-7netic_resume-7nHomePage_link_EN-btn" href="https://7netic.com/"
+                                        class="eden-btn" target="_blank">Illustration Website</a>
+                                    <a id="ga-7netic_resume-7nPortfolio_link_EN-btn"
+                                        href="https://www.behance.net/gallery/92617165/Edens-Portfolio"
+                                        class="eden-btn" target="_blank">Eden's Portfolio</a>
+                                    <a id="ga-7netic_resume-Vue_link_EN-btn" href="https://vue.7netic.com"
+                                        class="eden-btn" target="_blank">Vue.js Website</a>
+
+                                    <!-- <a href="https://vue.7netic.com/" class="text-dark"
+                                    target="_blank">https://vue.7netic.com/</a></br> -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Service Area -->
+
+
+
+
+
+
+
+
+
+            <div class="brook-icon-boxes-area  bg_color--1 ptb--150 ptb-md--80 ptb-sm--80 poss_relative"
+                id="experience">
+                <!-- Start Wavify Area -->
+                <div class="wavify-wrapper">
+                    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wavify-item"
+                        data-wavify-height="140" data-wavify-background="rgba(0,63,255,0.8)" data-wavify-amplitude="80"
+                        data-wavify-bones="4">
+                        <path
+                            d="M 0 218.59283264128385 C 157.625 205.26783633184579 157.625 205.26783633184579 315.25 211.93033448656482 C 472.875 218.59283264128385 472.875 218.59283264128385 630.5 184.031789931638 C 788.125 149.47074722199213 788.125 149.47074722199213 945.75 153.45180531537216 C 1103.375 157.43286340875216 1103.375 157.43286340875216 1261 184.031789931638 L 1261 7702 L 0 7702 Z"
+                            fill="rgba(255,239,239,0.5)"></path>
+                    </svg>
+
+                    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wavify-item"
+                        data-wavify-height="140" data-wavify-background="#e0fcfe" data-wavify-amplitude="80"
+                        data-wavify-bones="3">
+                        <path
+                            d="M 0 184.58326493685814 C 210.16666666666666 116.3196823092541 210.16666666666666 116.3196823092541 420.3333333333333 150.4514736230561 C 630.5 184.58326493685814 630.5 184.58326493685814 840.6666666666666 143.4864611902052 C 1050.8333333333333 102.38965744355225 1050.8333333333333 102.38965744355225 1261 142.3613389465964 L 1261 7702 L 0 7702 Z"
+                            fill="rgba(255,239,239,0.1)"></path>
+                    </svg>
+                </div>
+                <!-- End Wavify Area -->
+
+                <div class="container pt--150">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="brook-section-title wow move-up animate"
+                                style="visibility: visible; opacity: 0;">
+                                <h3 class="heading heading-h3 font-large">經驗 Experience</h3>
+                                <div class="thumb mt--35">
+                                    <img src="img/wavy-icon.png" alt="">
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 mt_sm--40">
+                            <div class="brook-section-details wow move-up animate"
+                                style="visibility: visible; opacity: 0;">
+                                <p class="bk_pra font-16 line-height-1-87">
+                                    致力於創作有生命力的平面設計、形象插畫、雜誌封面和品牌CIS規劃，並設計一系列的製作物與概念作品。<br>
+                                    I'm focus on creating creative, original, and
+                                    conceptual works for editorial illustrations, magazines, covers, and brands as well
+                                    as online visual organizations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <!-- Start Single Icon Boxes -->
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-12 wow move-up animate"
+                                    style="visibility: visible; opacity: 0;">
+                                    <div class="icon-box text-center no-border bg-transparant with-padding mt--10">
+                                        <div class="inner">
+                                            <div class="icon">
+                                                <img src="img/experience01.png" alt="Graphic Design">
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="heading heading-h5">Graphic Design</h5>
+                                                <p>8 years experience</p>
+                                                <p class="bk_pra"><i class="fa fa-check"></i> Using typography,
+                                                    photography, and illustration,
+                                                    including poster, logo, branding, and more.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Icon Boxes -->
+
+                                <!-- Start Single Icon Boxes -->
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-12 wow move-up animate"
+                                    style="visibility: visible; opacity: 0;">
+                                    <div class="icon-box text-center no-border bg-transparant with-padding mt--10">
+                                        <div class="inner">
+                                            <div class="icon">
+                                                <img src="img/experience02.png" alt="UI Design">
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="heading heading-h5">UI Design</h5>
+                                                <p>4 years experience</p>
+                                                <p class="bk_pra"><i class="fa fa-check"></i> Making Prototype Using
+                                                    Sketch and Invision.</p>
+                                                <p class="bk_pra"><i class="fa fa-check"></i> Develop Website with HTML,
+                                                    CSS, Angular and JavaScript.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Icon Boxes -->
+
+                                <!-- Start Single Icon Boxes -->
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-12 wow move-up animate"
+                                    style="visibility: visible; opacity: 0;">
+                                    <div class="icon-box text-center no-border bg-transparant with-padding mt--10">
+                                        <div class="inner">
+                                            <div class="icon">
+                                                <img src="img/experience03.png" alt="UX Design">
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="heading heading-h5">UX Design</h5>
+                                                <p>2 years experience</p>
+                                                <p class="bk_pra">Using
+                                                    <i class="fa fa-check"></i> Business Model, <br>
+                                                    <i class="fa fa-check"></i> User Analysis, <br>
+                                                    <i class="fa fa-check"></i> SEO Keyword <br>
+                                                    and <i class="fa fa-check"></i> Scenario Analysis.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Icon Boxes -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Start Progress Charts Area -->
+            <div class="brook-progress-charts-area ptb--150 ptb-md--80 ptb-sm--80 bg_color--1" id="skill">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="brook-section-title text-center mb--80">
+                                <h3 class="heading heading-h3 font-large">技能 Skill</h3>
+                                <div class="thumb mt--35">
+                                    <img src="img/wavy-icon.png" alt="">
+                                </div>
+                                <div class="bkseparator--30"></div>
+                                <p class="bk_pra font-16 line-height-1-87">網頁前端設計師 & UI 網站程式設計師 </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row plr_sm--30 justify-content-center">
+                        <div class="col-10">
+                            <div class="progress-wrapper mt_sm--40">
+
+                                <div class="progress-charts">
+                                    <h6 class="heading heading-h6">HTML/CSS
+                                        <span class="percent-label float-right">92%</span>
+                                    </h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft custom-color--2"
+                                            data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar"
+                                            style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="progress-charts mt--40">
+                                    <h6 class="heading heading-h6">Sketch/Invision/AdobeXD <span
+                                            class="percent-label float-right">92%</span></h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft custom-color--3" data-wow-duration="3s"
+                                            data-wow-delay=".5s" role="progressbar" style="width: 92%"
+                                            aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="progress-charts mt--40">
+                                    <h6 class="heading heading-h6">BootStrap <span
+                                            class="percent-label float-right">90%</span></h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft custom-color--4" data-wow-duration="2s"
+                                            data-wow-delay=".7s" role="progressbar" style="width: 90%"
+                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="progress-charts mt--40">
+                                    <h6 class="heading heading-h6">jQuery/JavaScript <span
+                                            class="percent-label float-right">70%</span></h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft" data-wow-duration="0.5s"
+                                            data-wow-delay=".6s" role="progressbar" style="width: 70%"
+                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+
+                                <div class="progress-charts mt--40">
+                                    <h6 class="heading heading-h6">Git <span
+                                            class="percent-label float-right">80%</span></h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft" data-wow-duration="2s"
+                                            data-wow-delay=".5s" role="progressbar" style="width: 80%"
+                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+
+                                <div class="progress-charts mt--40">
+                                    <h6 class="heading heading-h6">3Ds Max/AutoCad <span
+                                            class="percent-label float-right">80%</span></h6>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft" data-wow-duration="1.5s"
+                                            data-wow-delay=".2s" role="progressbar" style="width: 80%"
+                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Progress Charts Area -->
+
+
+
+
+
+            <!-- Start Portfolio Area -->
+            <div class="bk-portfolio-area" id="portfolio">
+                <div class="black-bg-wrapper bg_color--3 section-pt-xl- pb--80 pt--80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-title text-center white-text wow move-up">
+                                    <h2>PORTFOLIO</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start Portfolio Area -->
+                <div class="brook-portfolio-area pt--50 bg_color--1 bk-masonary-wrapper">
+
+                    <div class="messonry-button text-center">
+                        <button data-filter="*" class="is-checked">
+                            <span class="filter-text">All</span>
+                            <span class="filter-counter">8</span>
+                        </button>
+                        <button data-filter=".cat--1">
+                            <!-- graphic_design -->
+                            <span class="filter-text">Graphic Design</span>
+                            <span class="filter-counter">3</span>
+                        </button>
+                        <button data-filter=".cat--2">
+                            <!-- ui_design -->
+                            <span class="filter-text">UI Design</span>
+                            <span class="filter-counter">7</span>
+                        </button>
+                        <button data-filter=".cat--3">
+                            <!-- motion_design -->
+                            <span class="filter-text">Motion Design</span>
+                            <span class="filter-counter">1</span>
+                        </button>
+                        <button data-filter=".cat--4">
+                            <!-- app_design -->
+                            <span class="filter-text">App Design</span>
+                            <span class="filter-counter">5</span>
+                        </button>
+                    </div>
+
+                    <div class="portfolio-grid-metro mesonry-list mt--70">
+
+                        <div class="resizer"></div>
+
+                        <!-- Start Portfolio 1 -->
+                        <div class="portfolio portfolio_style--1 portfolio-25 grid-width-2 cat--2 cat--3">
+                            <div class="thumb">
+                                <img src="img/portfolio/portfolio_ui_02.gif" alt="Portfolio">
+                            </div>
+                            <div class="port-overlay-info">
+                                <div class="hover-action">
+                                    <h3 class="post-overlay-title"><a
+                                            href="https://dribbble.com/shots/5686364-7netic-Voice-Login-white"
+                                            target="_blank">Motion Design</a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Start Portfolio 2 -->
+                        <div class="portfolio portfolio_style--1 portfolio-25 grid-width-2 app_design cat--2 cat--4">
+                            <div class="thumb">
+                                <img src="img/portfolio/7netic_app.jpg" alt="Portfolio">
+                            </div>
+                            <div class="port-overlay-info">
+                                <div class="hover-action">
+                                    <h3 class="post-overlay-title"><a
+                                            href="https://www.behance.net/gallery/62995429/7netic-App-UI-KIT-Gradient-Mockup-DOWNLOAD-FREE"
+                                            target="_blank">App Portfolio</a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Start Portfolio 3 -->
+                        <div class="portfolio portfolio_style--1 portfolio-25 cat--2 cat--4">
+                            <div class="thumb">
+                                <img src="img/portfolio/portfolio_ui_03.png" alt="Portfolio">
+                            </div>
+                            <div class="port-overlay-info">
+                                <div class="hover-action">
+                                    <h3 class="post-overlay-title"><a
+                                            href="https://dribbble.com/shots/6782527-Pomodoro-Timer" target="_blank">App
+                                            Portfolio</a></a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Start Portfolio 4 -->
+                        <div class="portfolio portfolio_style--1 portfolio-25 cat--1">
+                            <div class="thumb">
+                                <img src="img/portfolio/7netic_portfolio-04.png" alt="Portfolio">
+                            </div>
+                            <div class="port-overlay-info">
+                                <div class="hover-action">
+                                    <h3 class="post-overlay-title"><a
+                                            href="https://www.behance.net/gallery/92617165/Edens-Portfolio"
+                                            target="_blank">Graphic Design</a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Start Portfolio 5 -->
+                        <div class="portfolio portfolio_style--1 portfolio-25 grid-width-2 cat--1 cat--2 cat--4">
+                            <div class="thumb">
+                                <img src="img/portfolio/portfolio_ui_01.jpg" alt="Portfolio Images">
+                            </div>
+                            <div class="port-overlay-info">
+                                <div class="hover-action">
+                                    <h3 class="post-overlay-title"><a
+                                            href="https://dribbble.com/shots/6856482-Music-Player-UI-Design-2"
+                                            target="_blank">UI Design</a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Start Portfolio 6 -->
+                        <div class="portfolio portfolio_style--1 portfolio-25 grid-width-2 cat--1 cat--2 cat--4">
+                            <div class="thumb">
+                                <img src="img/portfolio/portfolio_ui_02.jpg" alt="Portfolio">
+                            </div>
+                            <div class="port-overlay-info">
+                                <div class="hover-action">
+                                    <h3 class="post-overlay-title"><a
+                                            href="https://dribbble.com/shots/6849769-Music-Player-UI-Design-1"
+                                            target="_blank">UI Design</a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Start Portfolio 7 -->
+                        <div class="portfolio portfolio_style--1 portfolio-25 cat--2">
+                            <div class="thumb">
+                                <img src="img/portfolio/7netic_portfolio-01.png" alt="Portfolio">
+                            </div>
+                            <div class="port-overlay-info">
+                                <div class="hover-action">
+                                    <h3 class="post-overlay-title"><a
+                                            href="https://www.behance.net/gallery/92617165/Edens-Portfolio"
+                                            target="_blank">Graphic Design</a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Start Portfolio 8 -->
+                        <div class="portfolio portfolio_style--1 portfolio-25 cat--2 cat--4">
+                            <div class="thumb">
+                                <img src="img/portfolio/portfolio_ui_ZineCollection_app.jpg" alt="Portfolio">
+                            </div>
+                            <div class="port-overlay-info">
+                                <div class="hover-action">
+                                    <h3 class="post-overlay-title"><a
+                                            href="https://dribbble.com/shots/5700774-7netic-Zine-Collection-App"
+                                            target="_blank">App Design</a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- End Portfolio Area -->
+
+            </div>
+            <!-- End Portfolio Area -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Start Contact Area -->
+            <div class="bk-contact-area section-pb-xl bg_color--1 ptb--80" id="contact">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="brook-section-title text-center mb--80">
+                                <h3 class="heading heading-h3 font-large">Contact me</h3>
+                                <div class="thumb mt--35">
+                                    <img src="img/wavy-icon.png" alt="">
+                                </div>
+                                <div class="bkseparator--30"></div>
+
+                            </div>
+                        </div>
+
+                        <!-- Start Address -->
+
+                        <div class="row col-12">
+                            <div class="col-xl-6 col-lg-6 offset-xl-1">
+                                <div class="address-inner">
+
+                                    <div class="address mt--60 mb--60 wow move-up">
+                                        <h3 class="heading"></h3>
+                                        <p>Please Contact<br> <a href="mailto:s1u3n4@gmail.com"> s1u3n4@gmail.com</a>
+                                        </p>
+                                    </div>
+
+                                    <div class="address mt--60 mb--60 wow move-up">
+                                        <ul
+                                            class="social-icon icon-size-medium text-dark text-left tooltip-layout move-up wow">
+                                            <li class="linkedin">
+                                                <a id="ga-7netic_resume-Linkedin_link"
+                                                    href="https://www.linkedin.com/in/eden-c-875745136/"
+                                                    class="link hint--bounce hint--top hint--theme"
+                                                    aria-label="Linkedin" target="_blank">
+                                                    <i class="fab fa-linkedin"></i></a>
+                                            </li>
+                                            <li class="behance">
+                                                <a id="ga-7netic_resume-Behance-link"
+                                                    href="https://www.behance.net/7netic"
+                                                    class="link hint--bounce hint--top hint--theme" aria-label="Behance"
+                                                    target="_blank">
+                                                    <i class="fab fa-behance"></i></a>
+                                            </li>
+                                            <li class="dribbble">
+                                                <a id="ga-7netic_resume-Dribbble_link"
+                                                    href="https://dribbble.com/7netic"
+                                                    class="link hint--bounce hint--top hint--theme"
+                                                    aria-label="Dribbble" target="_blank">
+                                                    <i class="fab fa-dribbble"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-6">
+                                <a href="mailto:s1u3n4@gmail.com"><img src="img/email-s1u3n4@gmail.com.jpg"
+                                        alt="MailEden"></a>
+                            </div>
+                        </div>
+                        <!-- End Contact Area -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--// Page Conttent -->
+
+        <!-- Footer -->
+        <footer
+            class="page-footer bg_color--3 pl--150 pr--150 pl_lp--70 pr_lp--70 pl_lg--70 pr_lg--70 pl_md--50 pr_md--50 pl_sm--30 pr_sm--30">
+
+
+            <!-- Start Copyright Area -->
+            <div class="copyright ptb--50">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="copyright-left text-left">
+
+                            <ul
+                                class="social-icon bk-copyright-menu- d-flex justify-content-center justify-content-md-start icon-size-medium icon-size-large- text-dark- text-left tooltip-layout move-up wow">
+
+                                <li class="linkedin"><a href="https://www.linkedin.com/in/eden-c-875745136/"
+                                        class="link hint--bounce hint--top hint--theme" aria-label="Linkedin"
+                                        target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                <li class="behance"><a href="https://www.behance.net/7netic"
+                                        class="link hint--bounce hint--top hint--theme" aria-label="Behance"
+                                        target="_blank"><i class="fab fa-behance"></i></a></li>
+                                <li class="dribbble"><a href="https://dribbble.com/7netic"
+                                        class="link hint--bounce hint--top hint--theme" aria-label="Dribbble"
+                                        target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="copyright-right text-center text-md-right">
+                            <p> © 2022 <a href="https://7netic.com/" class="text-white" target="_blank">Eden Chen</a>
+                                All Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Copyright Area -->
+        </footer>
+        <!--// Footer -->
+
+    </div>
+    <!--// Wrapper -->
+
+    <!-- Js Files -->
+    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/popper.min.js-"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- REVOLUTION JS FILES -->
+    <script src="js/jquery.themepunch.tools.min.js"></script>
+    <script src="js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+    <script src="js/revolution.extension.actions.min.js"></script>
+    <script src="js/revolution.extension.carousel.min.js-"></script>
+    <script src="js/revolution.extension.kenburn.min.js-"></script>
+    <script src="js/revolution.extension.layeranimation.min.js"></script>
+    <script src="js/revolution.extension.migration.min.js-"></script>
+    <script src="js/revolution.extension.navigation.min.js"></script>
+    <script src="js/revolution.extension.parallax.min.js"></script>
+    <script src="js/revolution.extension.slideanims.min.js"></script>
+    <script src="js/revolution.extension.video.min.js-"></script>
+    <script src="js/revoulation.js"></script>
+
+</body>
+
+</html>

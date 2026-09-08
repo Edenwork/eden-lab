@@ -1,0 +1,45 @@
+#eden_pic img{
+        width: 170px;
+        height: 170px;
+        border-radius: 99em;
+        border: solid 1px rgba(255, 255, 255, 0);
+}
+.header-default.light-logo--version .header__wrapper .header-left .logo a img{
+        width: 40px !important;
+}
+
+.header-default .header__wrapper .header-left{
+        flex-basis:40% !important;
+}
+/* .br_header  {
+        height: 40px; 
+}
+
+h5.heading{
+        /* padding-top: 5px; 
+}*/
+
+
+.big_font{
+        font-family: "Poppins", sans-serif !important;
+        font-weight: 600;
+        
+}
+
+
+.progress-charts h6.heading{
+        text-transform:none !important;
+}
+
+
+.popup-mobile-manu{
+        background:none !important;
+}
+.popup-mobile-manu .inner {
+        background:#0036dcdb !important;
+}
+.object-custom-menu > li a span{
+        color:#ffffff !important;
+}
+.popup-mobile-manu .inner .mobileheader{
+        background:#e0fcfe !important;}
