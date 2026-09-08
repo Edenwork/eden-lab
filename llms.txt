@@ -1,0 +1,21 @@
+# Eden Design Lab
+
+Enterprise Product Design portfolio.
+
+## Main Sections
+
+- About
+- Portfolio
+- Case Studies
+- Blog
+
+## Expertise
+
+- Product Design
+- Design System
+- AI Platform
+- Design to Development
+
+## Website
+
+https://eden.comma-design.com/
