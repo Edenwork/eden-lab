@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# www + /index.html → 正式首頁（避免經過兩次轉址）
+RewriteCond %{HTTP_HOST} ^www\.eden\.comma-design\.com$ [NC]
+RewriteRule ^index\.html$ https://eden.comma-design.com/ [R=301,L]
+
+# www → non-www，保留原本內頁路徑
+RewriteCond %{HTTP_HOST} ^www\.eden\.comma-design\.com$ [NC]
+RewriteRule ^(.*)$ https://eden.comma-design.com/$1 [R=301,L]
+
+# /index.html → /
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
