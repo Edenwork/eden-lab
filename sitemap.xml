@@ -20,4 +20,36 @@
     <loc>https://eden.comma-design.com/blog.html</loc>
     <lastmod>2026-07-29</lastmod>
   </url>
+
+  <url>
+    <loc>https://eden.comma-design.com/blog/ai-design-skill-testing-2026-07.html</loc>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://eden.comma-design.com/blog/ai-platform-2026-07.html</loc>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://eden.comma-design.com/blog/seo-generative-ai-2024-01.html</loc>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://eden.comma-design.com/blog/ai-design-trends-2024-01.html</loc>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+
+  <!-- 待正式發布：移除 noindex、補 canonical 後，再拿掉此註解
+  <url>
+    <loc>https://eden.comma-design.com/blog/enterprise-ai-platform-2026-07.html</loc>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://eden.comma-design.com/blog/ai-platform-2026-08.html</loc>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+  -->
 </urlset>
